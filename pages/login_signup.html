@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign up to Online Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Body background and centering */
+        body {
+            background-color: #f2f4f7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container holding the box */
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        /* Card-like box */
+        .box {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid rgb(138, 189, 252);
+        }
+
+        /* Heading for login/signup toggle */
+        .headings {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .headings h2 {
+            cursor: pointer;
+            padding:  10px 20px;
+            font-size: 18px;
+            color: #555;
+            transition: color 0.3s;
+            border: 1px solid rgb(138, 189, 252);
+            border-radius: 20px;
+        }
+
+        .headings h2:hover {
+            color: #3498db;
+        }
+
+        /* Form area */
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Both forms hidden by default */
+        .form form {
+            display: none;
+            flex-direction: column;
+        }
+
+        /* Only the active form is visible */
+        .active-form {
+            display: flex !important;
+        }
+
+        /* Form elements */
+        input {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .box {
+                padding: 20px;
+            }
+
+            .headings h2 {
+                font-size: 16px;
+            }
+        }
+    </style> -->
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
+        <!-- Toggle Headings -->
+        <div class="flex justify-around mb-6 border-b border-gray-200">
+            <h2 id="loginTab"
+                class="pb-2 cursor-pointer font-medium text-gray-500 hover:text-blue-600 border-b-2 border-transparent">
+                Login</h2>
+            <h2 id="signupTab"
+                class="pb-2 cursor-pointer font-medium text-gray-500 hover:text-blue-600 border-b-2 border-transparent">
+                Sign Up</h2>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="space-y-4">
+            <input type="email" placeholder="Email" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="password" placeholder="Password" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Login</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="space-y-4 hidden">
+            <input type="email" placeholder="Email" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="password" placeholder="Password" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="password" placeholder="Confirm Password" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Sign
+                Up</button>
+        </form>
+    </div>
+
+    <!-- JS to toggle forms -->
+    <script>
+        const loginTab = document.getElementById('loginTab');
+        const signupTab = document.getElementById('signupTab');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+
+        loginTab.addEventListener('click', () => {
+            loginForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            loginTab.classList.add('border-blue-500', 'text-blue-600');
+            signupTab.classList.remove('border-blue-500', 'text-blue-600');
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+            signupTab.classList.add('border-blue-500', 'text-blue-600');
+            loginTab.classList.remove('border-blue-500', 'text-blue-600');
+        });
+    </script>
+</body>
+
+
+</html>
