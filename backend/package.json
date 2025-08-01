@@ -1,0 +1,26 @@
+{
+  "name": "the-webcrafters",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AmeyGarkar/The-WebCrafters#readme",
+  "bugs": {
+    "url": "https://github.com/AmeyGarkar/The-WebCrafters/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmeyGarkar/The-WebCrafters.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+"scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js"
+},
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.0"
+  }
+}
