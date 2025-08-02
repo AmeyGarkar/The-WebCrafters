@@ -20,8 +20,8 @@
       <a href="#">Gift Store</a>
     </nav>
     <div class="flex gap-4 text-lg cursor-pointer">
-      <span title="Search">🔍</span>
-      <span title="Profile">👤</span>
+     <span title="Search" onclick="openSearch()" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
+      <span title="Profile" id="profileBtn" class="hover:text-cyan-300 transition cursor-pointer"> 👤</span>
       <span title="Cart">🛒</span>
     </div>
   </header>
@@ -234,6 +234,31 @@
       &copy; 2025 WEARIFY. All Rights Reserved.
     </div>
   </footer>
+
+  
+  <!-- SEARCH MODAL OVERLAY -->
+<div id="searchModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
+  <div class="relative w-[95%] max-w-7xl h-[90%] mx-auto mt-10 bg-white rounded-2xl overflow-hidden shadow-2xl">
+ <button onclick="closeSearch()" class="absolute top-3 right-4 text-3xl text-gray-600 hover:text-black z-50">×</button>
+  <iframe src="search.html" class="w-full h-full border-0"></iframe>
+  </div>
+</div>
+<script>
+  function openSearch() {
+    document.getElementById("searchModal").classList.remove("hidden");
+  }
+
+  function closeSearch() {
+    document.getElementById("searchModal").classList.add("hidden");
+  }
+  </script>
+  <script>
+  document.getElementById('profileBtn').addEventListener('click', function () {
+    window.location.href = 'login_signup.html';
+  });
+</script>
+  
+
 
 </body>
 </html>

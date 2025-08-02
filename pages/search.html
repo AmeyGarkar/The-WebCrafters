@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Search Bar -->
+<nav class="w-full p-4 mt-4 border-b flex items-center gap-4 bg-white shadow">
+  <input
+    id="searchBox"
+    type="text"
+    placeholder="Search..."
+    class="w-full max-w-xl px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500"
+  />
+</nav>
+
+
+
+  <!-- Main Content: Sidebar + Products -->
+  <div class="flex h-[calc(100vh-64px)] overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-1/5 bg-gray-100 p-5 space-y-3 border-r">
+      <h2 class="text-lg font-bold">POPULAR CHOICES</h2>
+      <div class="flex flex-col gap-2 pt-2">
+        <button class="bg-black text-white py-2 px-4 rounded text-sm">SMART WATCHES</button>
+        <button class="bg-black text-white py-2 px-4 rounded text-sm">GAN CHARGER</button>
+        <button class="bg-black text-white py-2 px-4 rounded text-sm">WIRELESS EARBUDS</button>
+        <button class="bg-black text-white py-2 px-4 rounded text-sm">PRO 5</button>
+        <button class="bg-black text-white py-2 px-4 rounded text-sm">DIVA 2 WOMEN SMARTWATCH</button>
+      </div>
+    </aside>
+
+    <!-- Product Display -->
+    <main class="flex-1 overflow-y-auto p-6">
+      <h2 class="text-xl font-semibold mb-6 border-b pb-2">RECOMMENDED FOR YOU</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Product Card 1 -->
+        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+          <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/charger.jpg?v=1686908582" alt="Charger" class="w-full h-40 object-contain" />
+          <h3 class="font-bold mt-2 text-sm">Noise Power Charger</h3>
+          <p class="text-xs text-gray-500">Supports All iPhones | Global Compatibility</p>
+          <div class="mt-1 text-green-600 text-sm">
+            ₹1,149 <span class="line-through text-gray-400 ml-2">₹1,499</span> <span class="text-xs">23% OFF</span>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+          <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/airbuds4.jpg?v=1686908582" alt="Air Buds Pro 4" class="w-full h-40 object-contain" />
+          <h3 class="font-bold mt-2 text-sm">Air Buds Pro 4</h3>
+          <p class="text-xs text-gray-500">Hybrid ANC (Up to 40dB) | Quad Mics</p>
+          <div class="mt-1 text-green-600 text-sm">
+            ₹1,799 <span class="line-through text-gray-400 ml-2">₹5,499</span> <span class="text-xs">67% OFF</span>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+          <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/airbuds6.jpg?v=1686908582" alt="Air Buds Pro 6" class="w-full h-40 object-contain" />
+          <h3 class="font-bold mt-2 text-sm">Air Buds Pro 6</h3>
+          <p class="text-xs text-gray-500">LHDC 5.0 | Adaptive ANC 49dB</p>
+          <div class="mt-1 text-green-600 text-sm">
+            ₹2,999 <span class="line-through text-gray-400 ml-2">₹3,999</span> <span class="text-xs">25% OFF</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script>
+  document.getElementById("searchBox").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      const query = this.value.toLowerCase().trim();
+      if (query.includes("watch") || query === "watches" || query === "smart watches") {
+        window.location.href = "watches.html";
+      } else if (query.includes("charger")) {
+        window.location.href = "chargers.html";
+      } else if (query.includes("earbuds") || query.includes("buds")) {
+        window.location.href = "earbuds.html";
+      } else {
+        alert("No results found for '" + query + "'");
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+
