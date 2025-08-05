@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wearify - Wearables & Audio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <script src="index.js" defer></script> -->
-</head>
-<body class="bg-gray-100 text-gray-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wearify - Wearables & Audio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
 
-  <!-- NAVBAR -->
-<%- include("partials/header", { user }) %>
+    <!-- Header (include partial) -->
+    <%- include("partials/header") %>
 
+    <!-- Banner -->
+    <section class="bg-blue-100 text-center py-12 mb-10">
+      <h1 class="text-4xl font-bold mb-2">Your Tech Companion</h1>
+      <p class="text-gray-600">Wearables, Earbuds, Smart Audio, and More</p>
+    </section>
 
-
-  <!-- HERO SLIDER -->
+    <!-- HERO SLIDER -->
     <section class="relative w-full h-[80vh] bg-blue-100 rounded-b-2xl overflow-hidden">
     <div class="flex transition-transform duration-500 ease-in-out h-full slides">
       <!-- Slide 1 -->
@@ -59,285 +62,132 @@
     </div>
   </section>
 
- <!-- PRODUCT ROW 1 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p1.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Air Clips</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,999</span> ₹2,526</div>
-      <p class="text-xs text-gray-500">OWS with Airwave™ Tech</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p2.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Airwave Max 5</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹5,999</span> ₹4,274</div>
-      <p class="text-xs text-gray-500">Adaptive ANC | 80H Playtime</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p3.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">NoiseFit Twist Go</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,999</span> ₹1,329</div>
-      <p class="text-xs text-gray-500">1.39" HD Display | Metal Build</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p4.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Air Buds Pro 6</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,999</span> ₹2,707</div>
-      <p class="text-xs text-gray-500">ANC 49dB | LHDC 5.0</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p5.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Pure Pods</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹6,999</span> ₹2,707</div>
-      <p class="text-xs text-gray-500">80 hr playtime with Airwave™</p>
-    </div>
-  </div>
-</section>
 
-<!-- PRODUCT ROW 2 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p6.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">ZenPods Lite</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,499</span> ₹1,799</div>
-      <p class="text-xs text-gray-500">Featherweight Comfort</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p7.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Boom Bass Pro</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,199</span> ₹3,099</div>
-      <p class="text-xs text-gray-500">Deep Bass Bluetooth Speaker</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p8.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Pulse Watch 2</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,499</span> ₹2,299</div>
-      <p class="text-xs text-gray-500">Fitness Tracker | AMOLED</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p9.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">GamePods X</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,799</span> ₹3,399</div>
-      <p class="text-xs text-gray-500">Low Latency | 45H Battery</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p10.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">TrackFit Smartband</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹1,999</span> ₹1,199</div>
-      <p class="text-xs text-gray-500">IP68 | 10-Day Battery</p>
-    </div>
-  </div>
-</section>
 
-<!-- PRODUCT ROW 3 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p11.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Breeze Mini</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,299</span> ₹1,599</div>
-      <p class="text-xs text-gray-500">Compact Portable Speaker</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p12.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">SmartFit Ace</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,299</span> ₹2,299</div>
-      <p class="text-xs text-gray-500">Alexa | AMOLED | GPS</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p13.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">AirPods Neo</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹6,499</span> ₹4,899</div>
-      <p class="text-xs text-gray-500">ANC | Spatial Audio</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p14.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">FlexBand Pro</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,999</span> ₹1,899</div>
-      <p class="text-xs text-gray-500">Heart Rate | Sleep Tracking</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p15.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Elite Watch X</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹5,999</span> ₹4,299</div>
-      <p class="text-xs text-gray-500">Metal Build | 1.75" Display</p>
-    </div>
-  </div>
-</section>
-  <section class="relative w-full h-[80vh] bg-blue-100 rounded-b-2xl overflow-hidden">
-    <div class="flex transition-transform duration-500 ease-in-out h-full slides">
-      <!-- Slide 1 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Air Clips 2</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Live in the<br>moment</h1>
-          <p class="text-gray-700 my-4">Special launch offer</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Shop Now</button>
+
+
+
+
+
+    <!-- Top Picks Section -->
+    <main class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
+
+      <% if (products && products.length > 0) { %>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
+          <% products.forEach(product => { %>
+            <a href="/product/<%= product.slug %>" class="group">
+              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
+                <img src="<%= product.image %>" alt="<%= product.name %>"
+                     class="w-full h-40 object-cover rounded mb-2" />
+
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
+                  <%= product.name %>
+                </h3>
+
+                <div class="text-sm text-gray-500 mb-1">
+                  <% if (product.features && product.features.length > 0) { %>
+                    <%= product.features[0] %>
+                  <% } %>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
+                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
+                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
+                  <% } %>
+                </div>
+              </div>
+            </a>
+          <% }); %>
         </div>
-        <img src="images/slide1.jpg" alt="Air Clips - Wireless Earbuds" class="w-[400px] h-auto rounded-xl" />
-      </div>
+      <% } else { %>
+        <p class="text-gray-500">No products found.</p>
+      <% } %>
+    </main>
 
-      <!-- Slide 2 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Wave Ultra</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Style meets<br>function</h1>
-          <p class="text-gray-700 my-4">Smartwatch Series</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Explore</button>
+     <main class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
+
+      <% if (products && products.length > 0) { %>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
+          <% products.forEach(product => { %>
+            <a href="/product/<%= product.slug %>" class="group">
+              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
+                <img src="<%= product.image %>" alt="<%= product.name %>"
+                     class="w-full h-40 object-cover rounded mb-2" />
+
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
+                  <%= product.name %>
+                </h3>
+
+                <div class="text-sm text-gray-500 mb-1">
+                  <% if (product.features && product.features.length > 0) { %>
+                    <%= product.features[0] %>
+                  <% } %>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
+                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
+                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
+                  <% } %>
+                </div>
+              </div>
+            </a>
+          <% }); %>
         </div>
-        <img src="images/slide2.jpg" alt="Wave Ultra Smartwatch" class="w-[400px] h-auto rounded-xl" />
-      </div>
+      <% } else { %>
+        <p class="text-gray-500">No products found.</p>
+      <% } %>
+  
 
-      <!-- Slide 3 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Portable Beats</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Feel the<br>power</h1>
-          <p class="text-gray-700 my-4">Mini Bluetooth Speakers</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Buy Now</button>
+     
+      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
+
+      <% if (products && products.length > 0) { %>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
+          <% products.forEach(product => { %>
+            <a href="/product/<%= product.slug %>" class="group">
+              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
+                <img src="<%= product.image %>" alt="<%= product.name %>"
+                     class="w-full h-40 object-cover rounded mb-2" />
+
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
+                  <%= product.name %>
+                </h3>
+
+                <div class="text-sm text-gray-500 mb-1">
+                  <% if (product.features && product.features.length > 0) { %>
+                    <%= product.features[0] %>
+                  <% } %>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
+                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
+                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
+                  <% } %>
+                </div>
+              </div>
+            </a>
+          <% }); %>
         </div>
-        <img src="images/slide3.jpg" alt="Portable Bluetooth Speakers" class="w-[400px] h-auto rounded-xl" />
-      </div>
-    </div>
-
-    <!-- Indicators -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3 indicators">
-      <span class="dot w-3 h-3 rounded-full bg-black cursor-pointer" data-index="0"></span>
-      <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" data-index="1"></span>
-      <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" data-index="2"></span>
-    </div>
-  </section>
-
- <!-- PRODUCT ROW 1 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p1.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Air Clips</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,999</span> ₹2,526</div>
-      <p class="text-xs text-gray-500">OWS with Airwave™ Tech</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p2.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Airwave Max 5</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹5,999</span> ₹4,274</div>
-      <p class="text-xs text-gray-500">Adaptive ANC | 80H Playtime</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p3.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">NoiseFit Twist Go</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,999</span> ₹1,329</div>
-      <p class="text-xs text-gray-500">1.39" HD Display | Metal Build</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p4.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Air Buds Pro 6</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,999</span> ₹2,707</div>
-      <p class="text-xs text-gray-500">ANC 49dB | LHDC 5.0</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p5.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Pure Pods</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹6,999</span> ₹2,707</div>
-      <p class="text-xs text-gray-500">80 hr playtime with Airwave™</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT ROW 2 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p6.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">ZenPods Lite</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,499</span> ₹1,799</div>
-      <p class="text-xs text-gray-500">Featherweight Comfort</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p7.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Boom Bass Pro</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,199</span> ₹3,099</div>
-      <p class="text-xs text-gray-500">Deep Bass Bluetooth Speaker</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p8.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Pulse Watch 2</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,499</span> ₹2,299</div>
-      <p class="text-xs text-gray-500">Fitness Tracker | AMOLED</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p9.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">GamePods X</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹4,799</span> ₹3,399</div>
-      <p class="text-xs text-gray-500">Low Latency | 45H Battery</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p10.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">TrackFit Smartband</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹1,999</span> ₹1,199</div>
-      <p class="text-xs text-gray-500">IP68 | 10-Day Battery</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT ROW 3 -->
-<section class="px-4 py-10">
-  <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p11.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Breeze Mini</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,299</span> ₹1,599</div>
-      <p class="text-xs text-gray-500">Compact Portable Speaker</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p12.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">SmartFit Ace</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹3,299</span> ₹2,299</div>
-      <p class="text-xs text-gray-500">Alexa | AMOLED | GPS</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p13.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">AirPods Neo</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹6,499</span> ₹4,899</div>
-      <p class="text-xs text-gray-500">ANC | Spatial Audio</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p14.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">FlexBand Pro</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹2,999</span> ₹1,899</div>
-      <p class="text-xs text-gray-500">Heart Rate | Sleep Tracking</p>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/p15.jpg" class="w-full h-40 object-cover rounded" />
-      <h4 class="font-semibold mt-2">Elite Watch X</h4>
-      <div class="text-sm text-gray-700"><span class="line-through text-gray-400">₹5,999</span> ₹4,299</div>
-      <p class="text-xs text-gray-500">Metal Build | 1.75" Display</p>
-    </div>
-  </div>
-</section>
-  </section>
+      <% } else { %>
+        <p class="text-gray-500">No products found.</p>
+      <% } %>
+    </main>
 
 
-  <!-- FOOTER -->
- <%- include("partials/footer") %>
 
- <div id="searchModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
-  <div class="relative w-[95%] max-w-7xl h-[90%] mx-auto mt-10 bg-white rounded-2xl overflow-hidden shadow-2xl">
- <button onclick="closeSearch()" class="absolute top-3 right-4 text-3xl text-gray-600 hover:text-black z-50">×</button>
-  <iframe src="search.html" class="w-full h-full border-0"></iframe>
-  </div>
-</div>
+    <!-- Footer -->
+    <footer class="bg-white mt-16 py-6 text-center text-sm text-gray-400 border-t">
+      &copy; <%= new Date().getFullYear() %> Wearify. All rights reserved.
+    </footer>
 
 
-  <script>
+
+    <script>
   document.addEventListener('DOMContentLoaded', () => {
     // ====================
     // Slider Logic
@@ -376,51 +226,10 @@
     updateSlider();
     startAutoSlide();
 
-    // ====================
-    // Mobile Menu Toggle
-    // ====================
-    const toggleBtn = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (toggleBtn && navMenu) {
-      toggleBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('hidden');
-      });
-    }
-
-    // ====================
-    // Search Modal
-    // ====================
-    const searchIcon = document.getElementById('searchIcon');
-    const searchModal = document.getElementById('searchModal');
-
-    function openSearch() {
-      searchModal?.classList.remove('hidden');
-    }
-
-    function closeSearch() {
-      searchModal?.classList.add('hidden');
-    }
-
-    searchIcon?.addEventListener('click', openSearch);
-
-    searchModal?.addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeSearch();
-      }
-    });
   });
 
-   document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-
-    toggleBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("hidden");
-    });
-  });
-  
 </script>
 
 
-</body>
+  </body>
 </html>
