@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Wearify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        <!-- NAVBAR -->
+        <header
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-cyan-950 text-white px-6 py-4 rounded-b-2xl shadow-md">
+            <div class="text-2xl font-bold tracking-wide mb-2 sm:mb-0">WEARIFY</div>
+            <nav class="flex flex-wrap justify-center gap-3 font-semibold">
+                <a href="#">Smartwatches</a>
+                <a href="#">Earbuds</a>
+                <a href="#">Speakers</a>
+                <a href="#">Accessories</a>
+                <a href="#">Gift Store</a>
+            </nav>
+            <div class="flex justify-center gap-4 text-lg mt-2 sm:mt-0 cursor-pointer">
+                <span title="Search">🔍</span>
+                <span title="Profile">👤</span>
+                <span title="Cart">🛒</span>
+            </div>
+        </header>
+
+        <!-- CART SECTION -->
+        <section class="px-4 py-10">
+            <h2 class="text-2xl font-bold mb-6">Your Cart</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Cart Items -->
+                <div class="md:col-span-2 space-y-6">
+                    <!-- Single Cart Item -->
+                    <div class="bg-white rounded-lg shadow p-4 flex gap-4">
+                        <img src="images/p1.jpg" class="w-28 h-28 object-cover rounded" alt="Cart Item" />
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-lg">Air Clips</h4>
+                            <p class="text-sm text-gray-600">OWS with Airwave™ Tech</p>
+                            <div class="mt-2">
+                                <span class="text-gray-400 line-through">₹3,999</span>
+                                <span class="text-lg font-semibold text-gray-800 ml-2">₹2,526</span>
+                            </div>
+                            <div class="mt-2">
+                                <label for="quantity" class="text-sm">Qty:</label>
+                                <input id="quantity" type="number" value="1" min="1"
+                                    class="w-16 px-2 py-1 border rounded ml-2" />
+                            </div>
+                        </div>
+                        <button class="text-red-500 hover:text-red-700 font-bold text-xl">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-xl font-semibold mb-4">Order Summary</h3>
+                    <div class="flex justify-between mb-2">
+                        <span>Subtotal</span>
+                        <span>₹2,526</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span>Shipping</span>
+                        <span>₹50</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-bold border-t pt-4">
+                        <span>Total</span>
+                        <span>₹2,576</span>
+                    </div>
+                    <button class="mt-6 w-full bg-black text-white py-2 rounded hover:bg-gray-800">Proceed to
+                        Buy</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 px-6">
+        <div class="text-center text-gray-400 text-sm">
+            &copy; 2025 WEARIFY. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
