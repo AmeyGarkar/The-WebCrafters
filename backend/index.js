@@ -44,7 +44,7 @@ app.post("/signup",async (req,res) =>{
         const newUser = new User({name,email,password});
         await newUser.save();
          req.session.user = newUser; // ✅ save user in session after signup
-        res.redirect("/user");       
+        res.redirect("/");       
     } catch (error) {
         console.error("Error creating user:", error);
         res.status(500).json({error: "Internal Server Error"});
@@ -70,9 +70,9 @@ app.post("/login",async (req,res) =>{
     }
 });
 
-app.get("/", (req, res) => { 
-  res.render("index");          // ✅ Pass `user` to EJS
-});
+// app.get("/", (req, res) => { 
+//   res.render("index");          // ✅ Pass `user` to EJS
+// });
 
 // Logout
 app.get("/logout", (req, res) => {
@@ -87,7 +87,72 @@ app.get("/user", (req, res) => {
     res.render("user", { user: req.session.user }); // ✅ Pass `user` to EJS
 });
 
+app.use('/product', require('./routes/product'));
+
+const Product = require('./models/Product'); // Make sure this is correct
+
+app.get('/', async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.render('index', { products }); // ✅ PASS products to index.ejs
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
+
+
+
+app.post('/buy/:slug', async (req, res) => {
+  const product = await Product.findOne({ slug: req.params.slug });
+  if (!product || product.stock <= 0) {
+    return res.status(400).send("Product not available");
+  }
+
+  product.stock -= 1;
+  await product.save();
+
+  res.redirect(`/product/${product.slug}`);
+});
+
+
+app.get('/seed', async (req, res) => {
+  const products = [
+    {
+      name: "Air Clips - Wireless Earbuds",
+      slug: "air-clips-wireless-earbuds",
+      description: "Experience the next-level OWS with Airwave™ Technology...",
+      image: "https://via.placeholder.com/600x400",
+      features: [
+        "Airwave™ Technology with Deep Bass",
+        "Upto 45 Hours Total Playback",
+        "Instant Wake-N-Pair Technology",
+        "Low Latency for Gaming",
+        "USB-C Fast Charging"
+      ],
+      price: 2526,
+      originalPrice: 3999,
+      stock: 14
+    },
+    
+    // Add more products here
+  ];
+
+  await Product.deleteMany({});
+  await Product.insertMany(products);
+  res.send("Products added");
+});
+
+
+const productRoutes = require('./routes/productRoutes');
+app.use('/product', productRoutes);
+
+
+
+
+
 
 app.listen(8000, () => {
-    console.log(`Server is running at http://localhost:8000/login`);
+    console.log(`Server is running at http://localhost:8000`);
 });
