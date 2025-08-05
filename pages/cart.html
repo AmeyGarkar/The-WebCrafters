@@ -15,7 +15,8 @@
         <!-- NAVBAR -->
         <header
             class="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-cyan-950 text-white px-6 py-4 rounded-b-2xl shadow-md">
-            <div class="text-2xl font-bold tracking-wide mb-2 sm:mb-0">WEARIFY</div>
+           <a href="index.html" class="text-2xl font-bold tracking-wide mb-2 sm:mb-0">WEARIFY</a>
+
             <nav class="flex flex-wrap justify-center gap-3 font-semibold">
                 <a href="#">Smartwatches</a>
                 <a href="#">Earbuds</a>
@@ -26,7 +27,8 @@
             <div class="flex justify-center gap-4 text-lg mt-2 sm:mt-0 cursor-pointer">
                 <span title="Search">🔍</span>
                 <span title="Profile">👤</span>
-                <span title="Cart">🛒</span>
+                <a href="index.html" title="Cart" class="hover:text-cyan-300 transition">🛒</a>
+
             </div>
         </header>
 
@@ -86,6 +88,48 @@
             &copy; 2025 WEARIFY. All Rights Reserved.
         </div>
     </footer>
+    <script>
+  // Remove cart item
+  document.querySelectorAll('.text-red-500').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.bg-white.rounded-lg.shadow.p-4');
+      if (item) item.remove();
+      recalculateTotal();
+    });
+  });
+
+  // Update total on quantity change
+  document.querySelectorAll('#quantity').forEach(input => {
+    input.addEventListener('change', () => {
+      if (input.value < 1) input.value = 1;
+      recalculateTotal();
+    });
+  });
+
+  function recalculateTotal() {
+    let subtotal = 0;
+
+    document.querySelectorAll('.bg-white.rounded-lg.shadow.p-4').forEach(item => {
+      const priceText = item.querySelector('.font-semibold.text-gray-800');
+      const qtyInput = item.querySelector('#quantity');
+
+      if (priceText && qtyInput) {
+        const price = parseFloat(priceText.textContent.replace(/[^\d]/g, ''));
+        const quantity = parseInt(qtyInput.value);
+        subtotal += price * quantity;
+      }
+    });
+
+    const shipping = 50;
+    const total = subtotal + shipping;
+
+    document.querySelectorAll('span').forEach(span => {
+      if (span.textContent.includes('Subtotal')) span.nextElementSibling.textContent = `₹${subtotal}`;
+      if (span.textContent.includes('Total')) span.nextElementSibling.textContent = `₹${total}`;
+    });
+  }
+</script>
+
 
 </body>
 

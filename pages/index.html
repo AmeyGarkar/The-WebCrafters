@@ -42,7 +42,8 @@
     <div class="flex gap-4 text-lg cursor-pointer">
      <span title="Search" onclick="openSearch()" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
       <span title="Profile" id="profileBtn" class="hover:text-cyan-300 transition cursor-pointer"> 👤</span>
-      <span title="Cart">🛒</span>
+     <a href="cart.html" title="Cart" class="hover:text-cyan-300 transition cursor-pointer">🛒</a>
+
     </div>
   </header>
 
@@ -70,11 +71,14 @@
       <!-- Use your actual image paths and change details -->
       <!-- You can duplicate this block 24 times for 3 rows -->
       <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p1.jpg" class="w-full h-40 object-cover rounded" />
+       <a href="product.html?id=product1" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=" ../assets/images/Earbuds/boAt_Airdopes141/image1.webp"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
         <h4 class="font-semibold mt-2">Air Clips</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹3,999</span> ₹2,526
         </div>
+       
         <p class="text-xs text-gray-500">OWS with Airwave™ Tech</p>
       </div>
       <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
