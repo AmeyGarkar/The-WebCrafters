@@ -14,24 +14,36 @@
     .thumbnail-active {
       outline: 2px solid #06b6d4;
     }
+
+    .glass {
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.4),
+                inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+        }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-      <div id="product-container" class="p-4"></div>
+<body class="bg-gray-100  bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#f80759] text-white">
+    
 
-  <!-- Navbar -->
-  <header class="flex flex-wrap justify-between items-center px-6 py-4 bg-cyan-900 text-white rounded-b-xl">
-    <h1 class="text-2xl font-bold">WEARIFY</h1>
-    <nav class="space-x-4 text-sm w-full sm:w-auto text-center mt-2 sm:mt-0">
-      <a href="#" class="hover:text-cyan-300 block sm:inline">Smartwatches</a>
-      <a href="#" class="hover:text-cyan-300 block sm:inline">Earbuds</a>
-      <a href="#" class="hover:text-cyan-300 block sm:inline">Speakers</a>
-      <a href="#" class="hover:text-cyan-300 block sm:inline">Accessories</a>
-      <a href="#" class="hover:text-cyan-300 block sm:inline">Gift Store</a>
+  <!-- NAVBAR -->
+  <header
+    class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+    <h1 class="text-3xl font-bold">WEARIFY</h1>
+    <nav class="space-x-6">
+      <a href="#" class="hover:text-yellow-300">Smartwatches</a>
+      <a href="#" class="hover:text-yellow-300">Earbuds</a>
+      <a href="#" class="hover:text-yellow-300">Speakers</a>
+      <a href="#" class="hover:text-yellow-300">Accessories</a>
     </nav>
-    <div class="flex gap-4 text-lg cursor-pointer mt-2 sm:mt-0">
-      <a href="index.html" title="Home">🏠</a>
-      <a href="cart.html" title="Cart">🛒</a>
+    <div class="space-x-4">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
     </div>
   </header>
 
@@ -51,16 +63,16 @@
       <h2 id="productName" class="text-3xl font-bold mb-2"></h2>
       <div class="flex items-center mb-4">
         <span class="text-yellow-500 text-xl mr-2">★★★★★</span>
-        <span id="productRating" class="text-gray-600 text-sm"></span>
+        <span id="productRating" class="text-gray-200 text-sm"></span>
       </div>
-      <p id="productDescription" class="text-gray-600 mb-4"></p>
-      <div id="productOldPrice" class="text-gray-500 line-through text-lg"></div>
-      <div id="productPrice" class="text-2xl font-bold text-black mb-1"></div>
-      <div class="mb-4 text-gray-700">Stock left: <span id="productStock" class="font-semibold text-black"></span></div>
+      <p id="productDescription" class="text-white mb-4"></p>
+      <div id="productOldPrice" class="text-white line-through text-lg"></div>
+      <div id="productPrice" class="text-2xl font-bold text-white mb-1"></div>
+      <div class="mb-4 text-white">Stock left: <span id="productStock" class="font-semibold text-gray-200"></span></div>
 
       <div class="flex items-center gap-4 mb-6">
         <label class="font-semibold">Quantity:</label>
-        <input type="number" value="1" min="1" class="w-16 border rounded px-2 py-1">
+        <input type="number" value="1" min="1" class="w-16 border rounded px-2 py-1 bg-white text-black">
       </div>
 
       <div class="flex gap-4 mb-6">
@@ -69,18 +81,18 @@
       </div>
 
       <h3 class="text-xl font-semibold mb-2">Highlights</h3>
-      <ul id="productHighlights" class="list-disc pl-5 space-y-1 text-gray-700"></ul>
+      <ul id="productHighlights" class="list-disc pl-5 space-y-1 text-white"></ul>
 
-      <div class="mt-10 text-gray-700 space-y-4">
+      <div class="mt-10 text-white space-y-4">
         <h3 class="text-lg font-semibold">Product Information</h3>
         <div id="productDetails"></div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-cyan-900 text-white text-center py-6 mt-24 rounded-t-xl">
-    <p>&copy; 2025 Wearify. All rights reserved.</p>
+  <!-- FOOTER -->
+  <footer class="bg-gradient-to-r from-[#1e3c72] via-[#2a5298] to-[#f80759] py-6 text-center rounded-t-xl">
+    <p>&copy; 2025 <span class="font-semibold">Wearify</span>. All rights reserved.</p>
   </footer>
 
  <script src="../js/product-data.js"></script>
