@@ -7,38 +7,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wearify - Wearables & Audio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      plugins: [
-        function ({ addUtilities }) {
-          addUtilities({
-            '.scrollbar-hide': {
-              '-ms-overflow-style': 'none',
-              'scrollbar-width': 'none'
-            },
-            '.scrollbar-hide::-webkit-scrollbar': {
-              display: 'none'
-            }
-          });
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
         }
-      ]
-    }
-  </script>
+
+        .glass {
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.4),
+                inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+        }
+
+        .hover-zoom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-zoom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .scrollbar-custom::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white">
+
 
   <!-- NAVBAR -->
   <header
-    class="flex flex-col sm:flex-row sm:items-center sm:justify-between bg-cyan-950 text-white px-6 py-4 rounded-b-2xl">
-    <div class="text-2xl font-bold tracking-wide mb-2 sm:mb-0">WEARIFY</div>
-    <nav class="flex flex-wrap justify-center gap-3 font-semibold">
-      <a href="#">Smartwatches</a>
-      <a href="#">Earbuds</a>
-      <a href="#">Speakers</a>
-      <a href="#">Accessories</a>
-      <a href="#">Gift Store</a>
-    </nav>
+     class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+     <h1 class="text-3xl font-bold">WEARIFY</h1>
+   <nav class="space-x-6">
+            <a href="#" class="hover:text-yellow-300">Smartwatches</a>
+            <a href="#" class="hover:text-yellow-300">Earbuds</a>
+            <a href="#" class="hover:text-yellow-300">Speakers</a>
+            <a href="#" class="hover:text-yellow-300">Accessories</a>
+        </nav>
     <div class="flex gap-4 text-lg cursor-pointer">
      <span title="Search" onclick="openSearch()" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
       <span title="Profile" id="profileBtn" class="hover:text-cyan-300 transition cursor-pointer"> 👤</span>
@@ -48,93 +76,105 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative w-full h-[60vh] sm:h-[70vh] bg-blue-100 rounded-b-2xl overflow-hidden mt-2">
+  <section class="flex flex-col md:flex-row items-center justify-between p-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-b-2xl shadow-xl mt-4">
     <div class="flex transition-transform duration-500 ease-in-out h-full slides">
       <div class="min-w-full flex flex-col sm:flex-row justify-between items-center px-6 sm:px-10">
         <div class="text-center sm:text-left max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Air Clips 2</h4>
-          <h1 class="text-3xl sm:text-4xl font-bold text-black leading-tight">Live in the<br>moment</h1>
-          <p class="text-gray-700 my-4">Special launch offer</p>
+           <h2 class="text-sm text-yellow-200">Air Clips 2</h2><h1 class="text-5xl font-bold leading-tight">Live in the <br>moment</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold text-black leading-tight">Live in the<br>moment</h1>
+           <p class="my-4 text-white/80">Special launch offer</p>
           <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Shop Now</button>
         </div>
-        <img src="images/slide1.jpg" alt="Air Clips - Wireless Earbuds"
-          class="w-[250px] sm:w-[400px] h-auto rounded-xl mt-4 sm:mt-0" />
+        <img src=" ../assets/images/Earbuds/boAt_Airdopes141/image1.webp" alt="Air Clips - Wireless Earbuds"
+           class="w-[300px] md:w-[400px] rounded-lg shadow-xl mt-6 md:mt-0">
       </div>
     </div>
   </section>
 
   <!-- PRODUCT ROWS (3 rows with 8 cards each) -->
-  <section class="px-4 py-10">
-    <h2 class="text-xl font-semibold mb-4">Top Picks For You</h2>
-    <div class="flex gap-4 overflow-x-auto scrollbar-hide">
+  <section class="px-6 py-10 space-y-12">
+     <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+            <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
       <!-- Card x8 -->
       <!-- Use your actual image paths and change details -->
       <!-- You can duplicate this block 24 times for 3 rows -->
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-       <a href="product.html?id=product1" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+       <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                  <a href="product.html?id=boAt_Airdopes141" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+       <a href="product.html?id=boAt_Airdopes141" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
     <img src=" ../assets/images/Earbuds/boAt_Airdopes141/image1.webp"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-        <h4 class="font-semibold mt-2">Air Clips</h4>
+        <h4 class="font-semibold mt-2">boAt_Airdopes141</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹3,999</span> ₹2,526
         </div>
        
         <p class="text-xs text-gray-500">OWS with Airwave™ Tech</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <a href="product.html?id=product2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=" ..\assets\images\Earbuds\Noise_AirClipsWirelessAirbuds\image1.jpg"alt="product2"class="w-full aspect-square object-cover rounded-t-lg"
+      <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+ <a href="product.html?id=Noise_AirClipsWirelessAirbuds" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=" ../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-        <h4 class="font-semibold mt-2">Noise_AirClipsWirelessAirbuds</h4>
+        <h4 class="font-semibold mt-2">Noise_AirClipsWireless</h4>
         <div class="text-sm text-gray-700">
-          <span class="line-through text-gray-400">₹3,999</span> ₹2,526
+          <span class="line-through text-gray-400">₹3,499</span> ₹2,299
         </div>
-       
         <p class="text-xs text-gray-500">Fitness Tracker | AMOLED</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p3.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">Elite Watch X</h4>
+      <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+        <a href="product.html?id=Oneplus_NordBuds2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Earbuds/Oneplus_NordBuds2/image1.webp",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">Oneplus_NordBuds2</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹5,999</span> ₹4,299
         </div>
         <p class="text-xs text-gray-500">Metal Build | 1.75" Display</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p4.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">GamePods X</h4>
+       <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+        <a href="product.html?id=Samsung_GalaxyBuds2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=  "../assets/images/Earbuds/Samsung_GalaxyBuds2/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">Samsung_GalaxyBuds2</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹4,799</span> ₹3,399
         </div>
         <p class="text-xs text-gray-500">Low Latency | 45H Battery</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p5.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">ZenPods Lite</h4>
+     <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+        <a href="product.html?id=boAt Rockerz 450" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=  "../assets/images/Headphones/boAt Rockerz 450/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">boAt Rockerz 450</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹2,499</span> ₹1,799
         </div>
         <p class="text-xs text-gray-500">Featherweight Comfort</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p6.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">SmartFit Ace</h4>
+     <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+        <a href="product.html?id=JBL Tune 510BT" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src="../assets/images/Headphones/JBL Tune 510BT/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">JBL Tune 510BT</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹3,299</span> ₹2,299
         </div>
         <p class="text-xs text-gray-500">Alexa | AMOLED | GPS</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p7.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">Boom Bass Pro</h4>
+      <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+        <a href="product.html?id=Skullcandy Riff Wireless 2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src="../assets/images/Headphones/Skullcandy Riff Wireless 2/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">Skullcandy Riff Wireless 2</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹4,199</span> ₹3,099
         </div>
         <p class="text-xs text-gray-500">Deep Bass Bluetooth Speaker</p>
       </div>
-      <div class="bg-white p-4 rounded-lg shadow min-w-[250px] sm:min-w-[280px]">
-        <img src="images/p8.jpg" class="w-full h-40 object-cover rounded" />
-        <h4 class="font-semibold mt-2">Air Buds Pro 6</h4>
+     <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+       <a href="product.html?id=Sony WH-CH520" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Headphones/Sony WH-CH520/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+        <h4 class="font-semibold mt-2">Sony WH-CH520</h4>
         <div class="text-sm text-gray-700">
           <span class="line-through text-gray-400">₹3,999</span> ₹2,707
         </div>
@@ -293,57 +333,10 @@
 
   <!-- Repeat same block 2 more times with different titles for row 2 and 3 -->
 
-  <!-- FOOTER (unchanged) -->
-  <footer class="bg-gray-900 text-white mt-12 py-10 px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
-      <div>
-        <h2 class="text-xl font-bold mb-4">WEARIFY</h2>
-        <h4 class="font-semibold">SHOP BY FEATURES</h4>
-        <ul class="text-sm mt-2 space-y-1">
-          <li>Smart Watches with Alexa</li>
-          <li>AMOLED Display Smart Watches</li>
-          <li>Round Dial Smart Watches</li>
-          <li>Metallic & Leather Smart Watches</li>
-          <li>BT Calling Smart Watches</li>
-          <li>Android Smart Watches</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">SHOP BY GENDER</h4>
-        <ul class="text-sm mt-2 space-y-1">
-          <li>For Men</li>
-          <li>For Women</li>
-          <li>For Kids</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">SHOP BY PRICE</h4>
-        <ul class="text-sm mt-2 space-y-1">
-          <li>Under ₹2000</li>
-          <li>Under ₹3000</li>
-          <li>Under ₹4000</li>
-          <li>Under ₹5000</li>
-          <li>Above ₹5000</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">SHOP EARBUDS</h4>
-        <ul class="text-sm mt-2 space-y-1">
-          <li>ANC Earbuds</li>
-          <li>Gaming Earbuds</li>
-          <li>Under ₹1000</li>
-          <li>Under ₹1500</li>
-          <li>Under ₹2000</li>
-          <li>Under ₹2500</li>
-          <li>Above ₹2500</li>
-        </ul>
-      </div>
-    </div>
-    <div class="text-center text-gray-400 mt-8 text-sm">
-      &copy; 2025 WEARIFY. All Rights Reserved.
-    </div>
-  </footer>
-
+   <!-- FOOTER -->
+    <footer class="bg-gradient-to-r from-[#41295a] via-[#2F0743] to-[#ff6a00] py-6 text-center rounded-t-xl">
+        <p>&copy; 2025 <span class="font-semibold">Wearify</span>. All rights reserved.</p>
+    </footer>
   
   <!-- SEARCH MODAL OVERLAY -->
 <div id="searchModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
