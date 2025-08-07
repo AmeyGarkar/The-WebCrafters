@@ -58,20 +58,13 @@ images: [
       "Color": "Matte Purple"
     }
   },
-<<<<<<< HEAD
     "Oneplus_NordBuds2": {
     name: "Noise_AirClipsWirelessAirbuds",
-=======
-
-  "product3": {
-    name: "Amazfit Bip 3 pro",
->>>>>>> 48718e88fb0ec11047a5056b83384c1cdb6c8b6c
     description: "Experience the next-level OWS with Airwave™ Technology for immersive audio. 45H battery backup, sweat resistant.",
     price: 2526,
     oldPrice: 3999,
     stock: 14,
     rating: "4.9, 421 ratings",
-<<<<<<< HEAD
    
 images: [
   "../assets/images/Earbuds/Oneplus_NordBuds2/image1.webp",
@@ -81,14 +74,6 @@ images: [
 ],
 
   
-=======
-    images: [
-      " ../assets/images/Smartwatches/Amazfit Bip 3 Pro/image1.jpg",
-      " ../assets/images/Smartwatches/Amazfit Bip 3 Pro/image2.jpg",
-      " ../assets/images/Smartwatches/Amazfit Bip 3 Pro/image3.jpg"
-
-    ],
->>>>>>> 48718e88fb0ec11047a5056b83384c1cdb6c8b6c
     highlights: [
       "Airwave™ Technology with Deep Bass",
       "Upto 45 Hours Total Playback",
@@ -104,7 +89,6 @@ images: [
       "Color": "Matte Purple"
     }
   },
-<<<<<<< HEAD
   "Realme_WirelessEarbudsT300": {
     name: "Noise_AirClipsWirelessAirbuds",
     description: "Experience the next-level OWS with Airwave™ Technology for immersive audio. 45H battery backup, sweat resistant.",
@@ -297,6 +281,4 @@ images: [
     }
   },
    
-=======
->>>>>>> 48718e88fb0ec11047a5056b83384c1cdb6c8b6c
 };
