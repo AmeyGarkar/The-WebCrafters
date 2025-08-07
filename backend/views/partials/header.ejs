@@ -1,9 +1,10 @@
-<header class="bg-cyan-950 text-white px-6 py-4 rounded-b-2xl">
+ <header
+        class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
   <div class="container mx-auto flex items-center justify-between">
 
     <!-- Left: Logo and Greeting -->
     <div class="flex items-center gap-4">
-      <a href="/" class="text-2xl font-bold tracking-wide">WEARIFY</a>
+      <a href="/" class="text-3xl font-bold">WEARIFY</a>
       <% if (user) { %>
         <span class="text-base font-semibold">Hello, <%= user.name %></span>
       <% } %>
@@ -11,11 +12,11 @@
 
     <!-- Middle: Product Categories -->
     <nav class="flex flex-wrap justify-center gap-3 font-semibold">
-      <a href="#">Smartwatches</a>
-      <a href="#">Earbuds</a>
-      <a href="#">Speakers</a>
-      <a href="#">Accessories</a>
-      <a href="#">Gift Store</a>
+      <a href="#"  class="hover:text-yellow-300">Smartwatches</a>
+      <a href="#" class="hover:text-yellow-300">Earbuds</a>
+      <a href="#"  class="hover:text-yellow-300">Speakers</a>
+      <a href="#"  class="hover:text-yellow-300">Accessories</a>
+      <a href="#" class="hover:text-yellow-300">Gift Store</a>
     </nav>
 
     <!-- Right: Navigation + Profile Dropdown -->
