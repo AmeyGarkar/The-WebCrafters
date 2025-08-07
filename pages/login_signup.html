@@ -4,187 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Sign up to Online Store</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Login / Signup - Wearify</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Nata+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    <!-- <style>
-        /* Reset some default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        /* Body background and centering */
         body {
-            background-color: #f2f4f7;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Nata Sans', sans-serif;
         }
 
-        /* Container holding the box */
-        .container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
+        .glass {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
         }
-
-        /* Card-like box */
-        .box {
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            transition: all 0.3s ease;
-            border: 2px solid rgb(138, 189, 252);
-        }
-
-        /* Heading for login/signup toggle */
-        .headings {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .headings h2 {
-            cursor: pointer;
-            padding:  10px 20px;
-            font-size: 18px;
-            color: #555;
-            transition: color 0.3s;
-            border: 1px solid rgb(138, 189, 252);
-            border-radius: 20px;
-        }
-
-        .headings h2:hover {
-            color: #3498db;
-        }
-
-        /* Form area */
-        .form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Both forms hidden by default */
-        .form form {
-            display: none;
-            flex-direction: column;
-        }
-
-        /* Only the active form is visible */
-        .active-form {
-            display: flex !important;
-        }
-
-        /* Form elements */
-        input {
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            border-color: #3498db;
-        }
-
-        button {
-            padding: 12px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .box {
-                padding: 20px;
-            }
-
-            .headings h2 {
-                font-size: 16px;
-            }
-        }
-    </style> -->
+    </style>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
-        <!-- Toggle Headings -->
-        <div class="flex justify-around mb-6 border-b border-gray-200">
-            <h2 id="loginTab"
-                class="pb-2 cursor-pointer font-medium text-gray-500 hover:text-blue-600 border-b-2 border-transparent">
-                Login</h2>
-            <h2 id="signupTab"
-                class="pb-2 cursor-pointer font-medium text-gray-500 hover:text-blue-600 border-b-2 border-transparent">
-                Sign Up</h2>
+<body
+    class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="glass max-w-xl w-full p-8 space-y-6">
+        <div class="flex justify-center gap-4">
+            <button id="showLogin"
+                class="px-4 py-2 font-semibold text-black bg-blue-400 rounded hover:bg-blue-500">Login</button>
+            <button id="showSignup"
+                class="px-4 py-2 font-semibold text-black bg-blue-400 rounded hover:bg-blue-500">Sign Up</button>
         </div>
 
         <!-- Login Form -->
         <form id="loginForm" class="space-y-4">
+            <h2 class="text-2xl font-bold text-center">Login</h2>
             <input type="email" placeholder="Email" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                class="w-full px-4 py-2 rounded bg-white/10 text-white placeholder-white/60 focus:outline-none">
             <input type="password" placeholder="Password" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Login</button>
+                class="w-full px-4 py-2 rounded bg-white/10 text-white placeholder-white/60 focus:outline-none">
+            <button type="submit"
+                class="w-full py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-300">Login</button>
         </form>
 
         <!-- Signup Form -->
         <form id="signupForm" class="space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-center">Sign Up</h2>
+            <input type="text" placeholder="Full Name" required
+                class="w-full px-4 py-2 rounded bg-white/10 text-white placeholder-white/60 focus:outline-none">
             <input type="email" placeholder="Email" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                class="w-full px-4 py-2 rounded bg-white/10 text-white placeholder-white/60 focus:outline-none">
             <input type="password" placeholder="Password" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="password" placeholder="Confirm Password" required
-                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button type="submit" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Sign
-                Up</button>
+                class="w-full px-4 py-2 rounded bg-white/10 text-white placeholder-white/60 focus:outline-none">
+            <button type="submit"
+                class="w-full py-2 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-300">Sign Up</button>
         </form>
     </div>
 
-    <!-- JS to toggle forms -->
     <script>
-        const loginTab = document.getElementById('loginTab');
-        const signupTab = document.getElementById('signupTab');
+        const showLogin = document.getElementById('showLogin');
+        const showSignup = document.getElementById('showSignup');
         const loginForm = document.getElementById('loginForm');
         const signupForm = document.getElementById('signupForm');
 
-        loginTab.addEventListener('click', () => {
+        showLogin.addEventListener('click', () => {
             loginForm.classList.remove('hidden');
             signupForm.classList.add('hidden');
-            loginTab.classList.add('border-blue-500', 'text-blue-600');
-            signupTab.classList.remove('border-blue-500', 'text-blue-600');
         });
 
-        signupTab.addEventListener('click', () => {
+        showSignup.addEventListener('click', () => {
             signupForm.classList.remove('hidden');
             loginForm.classList.add('hidden');
-            signupTab.classList.add('border-blue-500', 'text-blue-600');
-            loginTab.classList.remove('border-blue-500', 'text-blue-600');
         });
-        </script>
-<button onclick="window.location.href='index.html'"
-  class="absolute top-4 right-4 text-gray-500 text-2xl font-bold hover:text-red-600 focus:outline-none"
-  title="Close">
-  &times;
-</button>
+    </script>
+
 </body>
+
 </html>
