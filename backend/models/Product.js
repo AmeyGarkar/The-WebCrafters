@@ -5,9 +5,12 @@ const productSchema = new mongoose.Schema({
   name: String,
   slug: String, // unique identifier in URL
   description: String,
-  image: [String],
+  
+  images: [String],
   features: [String],
   price: Number,
+  inBox: [String],
+
   originalPrice: Number,
   stock: Number // ✅ Available stock
 });

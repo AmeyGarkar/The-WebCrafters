@@ -6,230 +6,301 @@
     <title>Wearify - Wearables & Audio</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white">
 
-    <!-- Header (include partial) -->
     <%- include("partials/header") %>
 
-    <!-- Banner -->
-    <section class="bg-blue-100 text-center py-12 mb-10">
-      <h1 class="text-4xl font-bold mb-2">Your Tech Companion</h1>
-      <p class="text-gray-600">Wearables, Earbuds, Smart Audio, and More</p>
+     <!-- HERO SECTION -->
+    <section
+        class="flex flex-col md:flex-row items-center justify-between p-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-b-2xl shadow-xl mt-4">
+        <div>
+            <h2 class="text-sm text-yellow-200">Air Clips 2</h2>
+            <h1 class="text-5xl font-bold leading-tight">Live in the <br>moment</h1>
+            <p class="my-4 text-white/80">Special launch offer</p>
+            <button class="bg-yellow-400 text-black px-6 py-2 rounded-full hover:bg-yellow-300">Shop Now</button>
+        </div>
+        <img src="assets\images\Earbuds\Noise_AirClipsWirelessAirbuds\image5.jpg" alt="Air Clips"
+            class="w-[300px] md:w-[400px] rounded-lg shadow-xl mt-6 md:mt-0">
     </section>
 
-    <!-- HERO SLIDER -->
-    <section class="relative w-full h-[80vh] bg-blue-100 rounded-b-2xl overflow-hidden">
-    <div class="flex transition-transform duration-500 ease-in-out h-full slides">
-      <!-- Slide 1 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Air Clips 2</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Live in the<br>moment</h1>
-          <p class="text-gray-700 my-4">Special launch offer</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Shop Now</button>
-        </div>
-        <img src="images/slide1.jpg" alt="Air Clips - Wireless Earbuds" class="w-[400px] h-auto rounded-xl" />
-      </div>
+    <!-- PRODUCT SECTIONS -->
+    <section class="px-6 py-10 space-y-12">
 
-      <!-- Slide 2 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Wave Ultra</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Style meets<br>function</h1>
-          <p class="text-gray-700 my-4">Smartwatch Series</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Explore</button>
-        </div>
-        <img src="images/slide2.jpg" alt="Wave Ultra Smartwatch" class="w-[400px] h-auto rounded-xl" />
-      </div>
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+            <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
 
-      <!-- Slide 3 -->
-      <div class="min-w-full flex justify-between items-center px-10">
-        <div class="max-w-md">
-          <h4 class="text-sm text-gray-600 mb-2">Portable Beats</h4>
-          <h1 class="text-4xl font-bold text-black leading-tight">Feel the<br>power</h1>
-          <p class="text-gray-700 my-4">Mini Bluetooth Speakers</p>
-          <button class="bg-black text-white px-6 py-2 rounded-full font-semibold">Buy Now</button>
-        </div>
-        <img src="images/slide3.jpg" alt="Portable Bluetooth Speakers" class="w-[400px] h-auto rounded-xl" />
-      </div>
-    </div>
-
-    <!-- Indicators -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3 indicators">
-      <span class="dot w-3 h-3 rounded-full bg-black cursor-pointer" data-index="0"></span>
-      <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" data-index="1"></span>
-      <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" data-index="2"></span>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-    <!-- Top Picks Section -->
-    <main class="container mx-auto px-4">
-      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
-
-      <% if (products && products.length > 0) { %>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
-          <% products.forEach(product => { %>
-            <a href="/product/<%= product.slug %>" class="group">
-              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
-                <img src="<%= product.image %>" alt="<%= product.name %>"
-                     class="w-full h-40 object-cover rounded mb-2" />
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
-                  <%= product.name %>
-                </h3>
-
-                <div class="text-sm text-gray-500 mb-1">
-                  <% if (product.features && product.features.length > 0) { %>
-                    <%= product.features[0] %>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                  <a href="product.html?id=boAt_Airdopes141" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=" ../assets/images/Earbuds/boAt_Airdopes141/image1.webp"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="flex items-center gap-2">
-                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
-                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
-                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="assets\images\Earbuds\boAt_Airdopes141\image1.webp" alt="Product"
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-              </div>
-            </a>
-          <% }); %>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="assets\images\Earbuds\Oneplus_NordBuds2\image4.jpg" alt="Product"
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="assets\images\Smartwatches\Fire-Boltt Phoenix Pro\image1.jpg" alt="Product"
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="assets\images\Earbuds\Realme_WirelessEarbudsT300\image1.jpg" alt="Product"
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="assets\images\Smartwatches\realme Watch 3 Pro\image1.jpg" alt="Product"
+                        class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+            </div>
         </div>
-      <% } else { %>
-        <p class="text-gray-500">No products found.</p>
-      <% } %>
-    </main>
 
-     <main class="container mx-auto px-4">
-      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+            <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
 
-      <% if (products && products.length > 0) { %>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
-          <% products.forEach(product => { %>
-            <a href="/product/<%= product.slug %>" class="group">
-              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
-                <img src="<%= product.image %>" alt="<%= product.name %>"
-                     class="w-full h-40 object-cover rounded mb-2" />
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
-                  <%= product.name %>
-                </h3>
-
-                <div class="text-sm text-gray-500 mb-1">
-                  <% if (product.features && product.features.length > 0) { %>
-                    <%= product.features[0] %>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="flex items-center gap-2">
-                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
-                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
-                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-              </div>
-            </a>
-          <% }); %>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+            </div>
         </div>
-      <% } else { %>
-        <p class="text-gray-500">No products found.</p>
-      <% } %>
-  
 
-     
-      <h2 class="text-2xl font-semibold mb-6">Top Picks For You</h2>
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+            <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
 
-      <% if (products && products.length > 0) { %>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols gap-6">
-          <% products.forEach(product => { %>
-            <a href="/product/<%= product.slug %>" class="group">
-              <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition-all">
-                <img src="<%= product.image %>" alt="<%= product.name %>"
-                     class="w-full h-40 object-cover rounded mb-2" />
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-blue-600">
-                  <%= product.name %>
-                </h3>
-
-                <div class="text-sm text-gray-500 mb-1">
-                  <% if (product.features && product.features.length > 0) { %>
-                    <%= product.features[0] %>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="flex items-center gap-2">
-                  <span class="text-lg font-bold text-green-600">₹<%= product.price %></span>
-                  <% if (product.originalPrice && product.originalPrice > product.price) { %>
-                    <span class="text-sm line-through text-gray-400">₹<%= product.originalPrice %></span>
-                  <% } %>
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-              </div>
-            </a>
-          <% }); %>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+                <div class="min-w-[250px] p-4 rounded-xl glass hover-zoom">
+                    <img src="images/p1.jpg" alt="Product" class="w-full h-40 object-cover rounded-lg">
+                    <h4 class="font-semibold mt-2">Product Name</h4>
+                    <div class="text-sm">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-xs text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+
+            </div>
         </div>
-      <% } else { %>
-        <p class="text-gray-500">No products found.</p>
-      <% } %>
-    </main>
 
+    </section>
 
-
-    <!-- Footer -->
-    <footer class="bg-white mt-16 py-6 text-center text-sm text-gray-400 border-t">
-      &copy; <%= new Date().getFullYear() %> Wearify. All rights reserved.
+    <!-- FOOTER -->
+    <footer class="glass bg-gradient-to-r from-[#41295a] via-[#2F0743] to-[#ff6a00] py-6 text-center rounded-t-xl">
+        <p>&copy; 2025 <span class="font-semibold">Wearify</span>. All rights reserved.</p>
     </footer>
 
-
-
+    <!-- SEARCH MODAL OVERLAY -->
+    <div id="searchModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden">
+        <div class="relative w-[95%] max-w-7xl h-[90%] mx-auto mt-10 bg-white rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="closeSearch()"
+                class="absolute top-3 right-4 text-3xl text-gray-600 hover:text-black z-50">×</button>
+            <iframe src="search.html" class="w-full h-full border-0"></iframe>
+        </div>
+    </div>
     <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // ====================
-    // Slider Logic
-    // ====================
-    let currentSlide = 0;
-    const slides = document.querySelector('.slides');
-    const dots = document.querySelectorAll('.dot');
+        function openSearch() {
+            document.getElementById("searchModal").classList.remove("hidden");
+        }
 
-    function goToSlide(index) {
-      currentSlide = index;
-      updateSlider();
-    }
-
-    function updateSlider() {
-      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-      dots.forEach((dot, idx) => {
-        dot.classList.remove('bg-black', 'bg-gray-400');
-        dot.classList.add(idx === currentSlide ? 'bg-black' : 'bg-gray-400');
-      });
-    }
-
-    function startAutoSlide() {
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % dots.length;
-        updateSlider();
-      }, 5000);
-    }
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'), 10);
-        goToSlide(index);
-      });
-    });
-
-    updateSlider();
-    startAutoSlide();
-
-  });
-
-</script>
-
+        function closeSearch() {
+            document.getElementById("searchModal").classList.add("hidden");
+        }
+    </script>
+    <script>
+        document.getElementById('profileBtn').addEventListener('click', function () {
+            window.location.href = 'login_signup.html';
+        });
+    </script>
+ 
 
   </body>
 </html>

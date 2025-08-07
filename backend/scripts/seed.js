@@ -1,6 +1,6 @@
 // seed.js
 const mongoose = require("mongoose");
-const Product = require("./models/Product"); // Adjust path if needed
+const Product = require("../models/Product"); 
 
 mongoose.connect("mongodb://localhost:27017/webcrafters", {
   useNewUrlParser: true,
@@ -19,8 +19,7 @@ async function seedProducts() {
       slug: "wireless-earbuds",
       description: "Comfortable and long-lasting audio device",
       images: [
-        "https://images.unsplash.com/photo-1590650046871-92c887180603",
-        "https://images.unsplash.com/photo-1606813902914-14d201d3b9a2"
+        "image1.jpg","image2.jpg","image4.jpg"
       ],
       features: ["Bluetooth 5.0", "Noise Cancellation"],
       price: 1999,
@@ -32,9 +31,51 @@ async function seedProducts() {
       slug: "bluetooth-headphones",
       description: "Over-ear headphones with high-quality sound",
       images: [
-        "https://images.unsplash.com/photo-1585386959984-a4155224f7d2",
-        "https://images.unsplash.com/photo-1602524203822-d0e1c1f39b59"
+         "image1.jpg","image2.jpg","image4.jpg"
       ],
+       inBox: ["Charging Case", "USB-C Cable", "User Manual"],
+      features: ["40mm Drivers", "Long Battery Life"],
+      price: 2499,
+      originalPrice: 3499,
+      stock: 10
+    },
+
+     {
+      name: "Bluetooth Speakers",
+      slug: "bluetooth-speakers",
+      description: "Over-ear headphones with high-quality sound",
+      images: [
+         "image1.jpg","image2.jpg","image4.jpg"
+      ],
+       inBox: ["Charging Case", "USB-C Cable", "User Manual"],
+      features: ["40mm Drivers", "Long Battery Life"],
+      price: 2499,
+      originalPrice: 3499,
+      stock: 10
+    },
+
+     {
+      name: "Neckband Headphones",
+      slug: "neckband-headphones",
+      description: "Over-ear headphones with high-quality sound",
+      images: [
+         "image1.jpg","image2.jpg","image4.jpg"
+      ],
+       inBox: ["Charging Case", "USB-C Cable", "User Manual"],
+      features: ["40mm Drivers", "Long Battery Life"],
+      price: 2499,
+      originalPrice: 3499,
+      stock: 10
+    },
+
+     {
+      name: "Bluetooth Headphones",
+      slug: "bluetooth-headphones",
+      description: "Over-ear headphones with high-quality sound",
+      images: [
+         "image1.jpg","image2.jpg","image4.jpg"
+      ],
+       inBox: ["Charging Case", "USB-C Cable", "User Manual"],
       features: ["40mm Drivers", "Long Battery Life"],
       price: 2499,
       originalPrice: 3499,

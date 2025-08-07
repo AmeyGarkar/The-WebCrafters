@@ -70,11 +70,6 @@ app.post("/login",async (req,res) =>{
     }
 });
 
-// app.get("/", (req, res) => { 
-//   res.render("index");          // ✅ Pass `user` to EJS
-// });
-
-// Logout
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
@@ -117,31 +112,36 @@ app.post('/buy/:slug', async (req, res) => {
 });
 
 
+app.use(express.static('public'));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
 app.get('/seed', async (req, res) => {
   const products = [
     {
-      name: "Air Clips - Wireless Earbuds",
-      slug: "air-clips-wireless-earbuds",
-      description: "Experience the next-level OWS with Airwave™ Technology...",
-      image: "https://via.placeholder.com/600x400",
-      features: [
-        "Airwave™ Technology with Deep Bass",
-        "Upto 45 Hours Total Playback",
-        "Instant Wake-N-Pair Technology",
-        "Low Latency for Gaming",
-        "USB-C Fast Charging"
-      ],
-      price: 2526,
-      originalPrice: 3999,
-      stock: 14
+      name: "Wireless Earbuds",
+      slug: "wireless-earbuds",
+      description: "Comfortable and long-lasting audio device",
+      images: ["image1.jpg","image2.jpg"], // <-- Add your image filename here
+      features: ["Bluetooth 5.0", "Noise Cancellation"],
+      price: 1999,
+      originalPrice: 2999,
+      stock: 5
     },
-    
-    // Add more products here
+    {
+      name: "Bluetooth Headphones",
+      slug: "bluetooth-headphones",
+      description: "Over-ear headphones with high-quality sound",
+      images: ["image2.jpg"], // <-- Add your image filename here
+      features: ["40mm Drivers", "Long Battery Life"],
+      price: 2499,
+      originalPrice: 3499,
+      stock: 10
+    }
   ];
 
   await Product.deleteMany({});
   await Product.insertMany(products);
-  res.send("Products added");
+  res.send("Products seeded!");
 });
 
 
