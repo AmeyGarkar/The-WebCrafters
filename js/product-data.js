@@ -288,7 +288,6 @@ images: [
     stock: 14,
     rating: "4.9, 421 ratings",
    
-<<<<<<< HEAD
 images: [
   "../assets/images/Headphones/Zebronics Zeb-Rush/image1.jpg",
 
@@ -781,8 +780,6 @@ images: [
       "Color": "Matte Purple"
     }
   },
-=======
->>>>>>> b225983a913b2ca15a5c96baea3d399369d483c9
 };
 //   },"Sony WH-CH520": {
 //     name: "Noise_AirClipsWirelessAirbuds",
