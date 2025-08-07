@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <title>Search Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+
+<body class="text-gray-800">
 
   <!-- Search Bar -->
-<nav class="w-full p-4 mt-4 border-b flex items-center gap-4 bg-white shadow">
+<nav class="w-full p-4 mt-4 border-b flex items-center gap-4">
   <input
     id="searchBox"
     type="text"
@@ -22,7 +33,7 @@
   <!-- Main Content: Sidebar + Products -->
   <div class="flex h-[calc(100vh-64px)] overflow-hidden">
     <!-- Sidebar -->
-    <aside class="w-1/5 bg-gray-100 p-5 space-y-3 border-r">
+    <aside class="w-1/5 p-5 space-y-3 border-r text-white">
       <h2 class="text-lg font-bold">POPULAR CHOICES</h2>
       <div class="flex flex-col gap-2 pt-2">
         <button class="bg-black text-white py-2 px-4 rounded text-sm">SMART WATCHES</button>
@@ -39,7 +50,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <!-- Product Card 1 -->
-        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+        <div class="glass rounded-lg p-4 shadow hover:shadow-md transition">
           <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/charger.jpg?v=1686908582" alt="Charger" class="w-full h-40 object-contain" />
           <h3 class="font-bold mt-2 text-sm">Noise Power Charger</h3>
           <p class="text-xs text-gray-500">Supports All iPhones | Global Compatibility</p>
@@ -49,7 +60,7 @@
         </div>
 
         <!-- Product Card 2 -->
-        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+        <div class="glass rounded-lg p-4 shadow hover:shadow-md transition">
           <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/airbuds4.jpg?v=1686908582" alt="Air Buds Pro 4" class="w-full h-40 object-contain" />
           <h3 class="font-bold mt-2 text-sm">Air Buds Pro 4</h3>
           <p class="text-xs text-gray-500">Hybrid ANC (Up to 40dB) | Quad Mics</p>
@@ -59,7 +70,7 @@
         </div>
 
         <!-- Product Card 3 -->
-        <div class="bg-gray-50 rounded-lg p-4 shadow hover:shadow-md transition">
+        <div class="glass rounded-lg p-4 shadow hover:shadow-md transition">
           <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/airbuds6.jpg?v=1686908582" alt="Air Buds Pro 6" class="w-full h-40 object-contain" />
           <h3 class="font-bold mt-2 text-sm">Air Buds Pro 6</h3>
           <p class="text-xs text-gray-500">LHDC 5.0 | Adaptive ANC 49dB</p>
