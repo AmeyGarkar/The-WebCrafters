@@ -9,12 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .glass { background: rgba(255,255,255,0.16); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 30px rgba(0,0,0,0.4), inset 0 0 0.5px rgba(255,255,255,0.2); border-radius: 1rem; }
+    .glass {
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.4),
+                  inset 0 0 0.5px rgba(255,255,255,0.2);
+      border-radius: 1rem;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen">
+
   <!-- NAVBAR -->
-  <header class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+  <header class="flex flex-col sm:flex-row justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg gap-4 sm:gap-0">
     <div class="flex items-center space-x-4">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-400 drop-shadow-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
@@ -25,20 +33,23 @@
       <a href="smartwatches.html" class="hover:text-yellow-300">Smartwatches</a>
       <a href="earbuds.html" class="hover:text-yellow-300">Earbuds</a>
       <a href="speakers.html" class="hover:text-yellow-300">Speakers</a>
-      <a href="accessories.html" class="hover:text-yellow-300">Accessories</a>
+      <a href="headphones.html" class="hover:text-yellow-300">Headphones</a>
+      <a href="neckbands.html" class="hover:text-yellow-300">Neckbands</a>
     </nav>
-    <div class="flex gap-4 text-2xl cursor-pointer">
+    <div class="flex gap-4 text-2xl">
       <span title="Search" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
       <span title="Profile" class="hover:text-cyan-300 transition cursor-pointer">👤</span>
       <a href="cart.html" title="Cart" class="hover:text-cyan-300 transition cursor-pointer">🛒</a>
     </div>
   </header>
-  <main class="px-6 py-10">
-    <h2 class="text-3xl font-bold mb-8">Earbuds</h2>
-    <div id="productList" class="flex flex-col gap-6"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="px-4 sm:px-6 py-6 sm:py-10">
+    <h2 class="text-3xl font-bold mb-8 text-center sm:text-left">Earbuds</h2>
+    <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
   </main>
+
 <script>
-// List of product keys for earbuds
 const earbudsKeys = [
   "boAt_Airdopes141",
   "Noise_AirClipsWirelessAirbuds",
@@ -47,54 +58,53 @@ const earbudsKeys = [
   "Samsung_GalaxyBuds2"
 ];
 
-function createProductRow(key, product) {
-  // Main row container
-  const row = document.createElement('div');
-  row.className = "glass flex items-center gap-14 p-10 rounded-2xl hover:shadow-2xl transition cursor-pointer min-h-[220px]";
-  row.tabIndex = 0;
-  row.setAttribute('role', 'button');
-  row.setAttribute('aria-label', product.name);
+function createProductCard(key, product) {
+  const card = document.createElement('div');
+  card.className = "glass flex flex-col p-4 rounded-2xl hover:shadow-2xl transition cursor-pointer h-full";
 
-  // Image (even larger)
   const img = document.createElement('img');
   img.src = product.images[0].trim();
   img.alt = product.name;
-  img.className = "w-56 h-56 object-contain rounded-2xl bg-white/10 flex-shrink-0";
+  img.className = "w-full h-48 object-contain rounded-lg bg-white/10 mb-4 hover:scale-105 transition-transform";
 
-  // Details at right of image, larger text
-  const details = document.createElement('div');
-  details.className = "flex flex-col justify-between flex-1 min-w-0 pl-6";
-  details.innerHTML = `
-    <div>
-      <h3 class=\"font-bold text-3xl mb-2 truncate\">${product.name}</h3>
-      <p class=\"text-xl text-gray-100 mb-4 truncate\">${product.description}</p>
-    </div>
-    <div class=\"flex items-center gap-10 mt-4\">
-      <div class=\"text-yellow-300 font-extrabold text-2xl\">₹${product.price} <span class='text-lg text-gray-400 line-through ml-2'>₹${product.oldPrice}</span></div>
-      <div class=\"text-base text-gray-400\">${product.rating}</div>
-    </div>
-  `;
+  const name = document.createElement('h3');
+  name.className = "font-bold text-lg sm:text-xl mb-2 truncate";
+  name.textContent = product.name;
 
-  // Add to Cart button
+  const desc = document.createElement('p');
+  desc.className = "text-sm text-gray-200 mb-4 line-clamp-2";
+  desc.textContent = product.description;
+
+  const priceWrap = document.createElement('div');
+  priceWrap.className = "text-yellow-300 font-extrabold text-lg sm:text-xl mb-1";
+  priceWrap.innerHTML = `₹${product.price} <span class='text-sm text-gray-400 line-through ml-1'>₹${product.oldPrice}</span>`;
+
+  const rating = document.createElement('div');
+  rating.className = "text-sm text-gray-400 mb-4";
+  rating.textContent = product.rating;
+
   const addBtn = document.createElement('button');
-  addBtn.className = "ml-12 px-8 py-4 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300 transition shadow ripple text-xl";
+  addBtn.className = "mt-auto px-4 py-2 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300 transition shadow text-sm sm:text-base w-full";
   addBtn.textContent = "Add to Cart";
   addBtn.onclick = (e) => {
     e.stopPropagation();
-    alert('Added to cart!'); // Replace with real cart logic
+    alert('Added to cart!');
   };
 
-  // Clicking row navigates to product page
-  row.onclick = (e) => {
+  card.onclick = (e) => {
     if (e.target !== addBtn) {
       window.location.href = `product.html?id=${encodeURIComponent(key)}`;
     }
   };
 
-  row.appendChild(img);
-  row.appendChild(details);
-  row.appendChild(addBtn);
-  return row;
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(desc);
+  card.appendChild(priceWrap);
+  card.appendChild(rating);
+  card.appendChild(addBtn);
+
+  return card;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -102,10 +112,11 @@ window.addEventListener('DOMContentLoaded', () => {
   earbudsKeys.forEach(key => {
     const product = window.productsData[key];
     if (product) {
-      list.appendChild(createProductRow(key, product));
+      list.appendChild(createProductCard(key, product));
     }
   });
 });
 </script>
 </body>
 </html>
+

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smartwatches - Wearify</title>
+  <title>Headphones - Wearify</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../js/product-data.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -45,17 +45,17 @@
 
   <!-- MAIN CONTENT -->
   <main class="px-4 sm:px-6 py-6 sm:py-10">
-    <h2 class="text-3xl font-bold mb-8 text-center sm:text-left">Smartwatches</h2>
+    <h2 class="text-3xl font-bold mb-8 text-center sm:text-left">Headphones</h2>
     <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
   </main>
 
 <script>
-const smartwatchesKeys = [
-  "Boat_WaveCall2Plus",
-  "Amazfit Bip 3 Pro",
-  "Fire-Boltt Phoenix Pro",
-  "Noise_ColorFitIcon2",
-  "realme Watch 3 Pro"
+const headphonesKeys = [
+  "boAt Rockerz 450",
+  "JBL Tune 510BT",
+  "Skullcandy Riff Wireless 2",
+  "Sony WH-CH520",
+  "Zebronics Zeb-Rush"
 ];
 
 function createProductCard(key, product) {
@@ -109,7 +109,7 @@ function createProductCard(key, product) {
 
 window.addEventListener('DOMContentLoaded', () => {
   const list = document.getElementById('productList');
-  smartwatchesKeys.forEach(key => {
+  headphonesKeys.forEach(key => {
     const product = window.productsData[key];
     if (product) {
       list.appendChild(createProductCard(key, product));

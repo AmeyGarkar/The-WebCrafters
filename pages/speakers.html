@@ -5,15 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Speakers - Wearify</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/product-data.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .glass { background: rgba(255,255,255,0.16); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 30px rgba(0,0,0,0.4), inset 0 0 0.5px rgba(255,255,255,0.2); border-radius: 1rem; }
+    .glass {
+      background: rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.4),
+                  inset 0 0 0.5px rgba(255,255,255,0.2);
+      border-radius: 1rem;
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen">
+
   <!-- NAVBAR -->
-  <header class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+  <header class="flex flex-col sm:flex-row justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg gap-4 sm:gap-0">
     <div class="flex items-center space-x-4">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-400 drop-shadow-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
@@ -24,49 +33,88 @@
       <a href="smartwatches.html" class="hover:text-yellow-300">Smartwatches</a>
       <a href="earbuds.html" class="hover:text-yellow-300">Earbuds</a>
       <a href="speakers.html" class="hover:text-yellow-300">Speakers</a>
-      <a href="accessories.html" class="hover:text-yellow-300">Accessories</a>
+      <a href="headphones.html" class="hover:text-yellow-300">Headphones</a>
+      <a href="neckbands.html" class="hover:text-yellow-300">Neckbands</a>
     </nav>
-    <div class="flex gap-4 text-2xl cursor-pointer">
+    <div class="flex gap-4 text-2xl">
       <span title="Search" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
       <span title="Profile" class="hover:text-cyan-300 transition cursor-pointer">👤</span>
       <a href="cart.html" title="Cart" class="hover:text-cyan-300 transition cursor-pointer">🛒</a>
     </div>
   </header>
-  <main class="px-6 py-10">
-    <h2 class="text-3xl font-bold mb-8">Speakers</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Product Cards -->
-      <div class="glass p-4 flex flex-col items-center">
-        <img src="../assets/images/Speakers/boAt Stone 1200F/image1.jpg" alt="boAt Stone 1200F" class="w-32 h-32 object-cover rounded mb-2">
-        <h3 class="font-bold text-lg">boAt Stone 1200F</h3>
-        <p class="text-sm text-gray-200">14W, RGB Lights, 9H Playtime</p>
-        <div class="mt-2 text-yellow-300 font-semibold">₹3,499</div>
-      </div>
-      <div class="glass p-4 flex flex-col items-center">
-        <img src="../assets/images/Speakers/JBL Go 3/image1.jpg" alt="JBL Go 3" class="w-32 h-32 object-cover rounded mb-2">
-        <h3 class="font-bold text-lg">JBL Go 3</h3>
-        <p class="text-sm text-gray-200">IP67, 5H Playtime, Portable</p>
-        <div class="mt-2 text-yellow-300 font-semibold">₹2,199</div>
-      </div>
-      <div class="glass p-4 flex flex-col items-center">
-        <img src="../assets/images/Speakers/Mivi Roam 2/image1.jpg" alt="Mivi Roam 2" class="w-32 h-32 object-cover rounded mb-2">
-        <h3 class="font-bold text-lg">Mivi Roam 2</h3>
-        <p class="text-sm text-gray-200">5W, 24H Playtime, Metal Body</p>
-        <div class="mt-2 text-yellow-300 font-semibold">₹1,149</div>
-      </div>
-      <div class="glass p-4 flex flex-col items-center">
-        <img src="../assets/images/Speakers/Sony SRS-XB13/image1.jpg" alt="Sony SRS-XB13" class="w-32 h-32 object-cover rounded mb-2">
-        <h3 class="font-bold text-lg">Sony SRS-XB13</h3>
-        <p class="text-sm text-gray-200">Extra Bass, 16H Battery, IP67</p>
-        <div class="mt-2 text-yellow-300 font-semibold">₹3,999</div>
-      </div>
-      <div class="glass p-4 flex flex-col items-center">
-        <img src="../assets/images/Speakers/Zebronics Zeb-Vita Pro/image1.jpg" alt="Zebronics Zeb-Vita Pro" class="w-32 h-32 object-cover rounded mb-2">
-        <h3 class="font-bold text-lg">Zebronics Zeb-Vita Pro</h3>
-        <p class="text-sm text-gray-200">16W, FM, USB, Bluetooth</p>
-        <div class="mt-2 text-yellow-300 font-semibold">₹1,799</div>
-      </div>
-    </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="px-4 sm:px-6 py-6 sm:py-10">
+    <h2 class="text-3xl font-bold mb-8 text-center sm:text-left">Speakers</h2>
+    <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
   </main>
+
+<script>
+const speakersKeys = [
+  "boAt Stone 1200F",
+  "JBL Go 3",
+  "Mivi Roam 2",
+  "Sony SRS-XB13"
+];
+
+function createProductCard(key, product) {
+  const card = document.createElement('div');
+  card.className = "glass flex flex-col p-4 rounded-2xl hover:shadow-2xl transition cursor-pointer h-full";
+
+  const img = document.createElement('img');
+  img.src = product.images[0].trim();
+  img.alt = product.name;
+  img.className = "w-full h-48 object-contain rounded-lg bg-white/10 mb-4 hover:scale-105 transition-transform";
+
+  const name = document.createElement('h3');
+  name.className = "font-bold text-lg sm:text-xl mb-2 truncate";
+  name.textContent = product.name;
+
+  const desc = document.createElement('p');
+  desc.className = "text-sm text-gray-200 mb-4 line-clamp-2";
+  desc.textContent = product.description;
+
+  const priceWrap = document.createElement('div');
+  priceWrap.className = "text-yellow-300 font-extrabold text-lg sm:text-xl mb-1";
+  priceWrap.innerHTML = `₹${product.price} <span class='text-sm text-gray-400 line-through ml-1'>₹${product.oldPrice}</span>`;
+
+  const rating = document.createElement('div');
+  rating.className = "text-sm text-gray-400 mb-4";
+  rating.textContent = product.rating;
+
+  const addBtn = document.createElement('button');
+  addBtn.className = "mt-auto px-4 py-2 bg-yellow-400 text-black font-bold rounded-xl hover:bg-yellow-300 transition shadow text-sm sm:text-base w-full";
+  addBtn.textContent = "Add to Cart";
+  addBtn.onclick = (e) => {
+    e.stopPropagation();
+    alert('Added to cart!');
+  };
+
+  card.onclick = (e) => {
+    if (e.target !== addBtn) {
+      window.location.href = `product.html?id=${encodeURIComponent(key)}`;
+    }
+  };
+
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(desc);
+  card.appendChild(priceWrap);
+  card.appendChild(rating);
+  card.appendChild(addBtn);
+
+  return card;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('productList');
+  speakersKeys.forEach(key => {
+    const product = window.productsData[key];
+    if (product) {
+      list.appendChild(createProductCard(key, product));
+    }
+  });
+});
+</script>
 </body>
 </html>
