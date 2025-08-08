@@ -57,14 +57,28 @@
     <!-- NAVBAR -->
     <header
         class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
-        <h1 class="text-3xl font-bold">WEARIFY</h1>
+       
+
+    <div class="flex items-center space-x-4">
+  <!-- Diamond Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-400 drop-shadow-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
+  </svg>
+
+  <!-- Wearify Text -->
+  <h1 class="text-4xl font-extrabold font-serif text-yellow-400 drop-shadow-xl tracking-wide">
+    wearify
+  </h1>
+</div>
+
+
         <nav class="space-x-6">
             <a href="#" class="hover:text-yellow-300">Smartwatches</a>
             <a href="#" class="hover:text-yellow-300">Earbuds</a>
             <a href="#" class="hover:text-yellow-300">Speakers</a>
             <a href="#" class="hover:text-yellow-300">Accessories</a>
         </nav>
-        <div class="flex gap-4 text-lg cursor-pointer">
+        <div class="flex gap-4 text-2xl cursor-pointer">
             <span title="Search" onclick="openSearch()" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
             <span title="Profile" id="profileBtn" class="hover:text-cyan-300 transition cursor-pointer"> 👤</span>
             <a href=".\cart.html" title="Cart" class="hover:text-cyan-300 transition cursor-pointer">🛒</a>
@@ -86,7 +100,7 @@
                         
                         <!-- Text Content -->
                         <div class="flex-1 text-center lg:text-left">
-                            <span class="inline-block px-4 py-2 bg-yellow-400 text-black rounded-full text-xs md:text-sm font-semibold mb-4">
+                            <span class="inline-block px-4 py-2 bg-yellow-400 text-black rounded-full text-xs md:text-sm font-semibold mb-7">
                                 🎶 Your World, Your Sound
                             </span>
                             <h5 class="text-2xl md:text-4xl font-bold leading-tight mb-4">
@@ -281,8 +295,16 @@
     <section class="px-6 py-10 space-y-12">
 
         <div>
-            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
-            <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
+        <h2 class="text-4xl font-bold mb-4">
+  <span class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Top Picks For You </span>
+ 
+</h2>
+
+
+             <div class="overflow-x-auto px-12 pb-2 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
+      
+      <div class="flex gap-6">
+        <div class="flex gap-6 overflow-x-auto scrollbar-custom px-6 pb-2">
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                   <a href="product.html?id=boAt_Airdopes141" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -295,30 +317,29 @@
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                   <a href="product.html?id=Noise_AirClipsWirelessAirbuds" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=" ../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+                    <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                   <a href="product.html?id=Sony SRS-XB13" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=  "../assets/images/Speakers/Sony SRS-XB13/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                     
-                    <h4 class="font-semibold mt-2">Noise_AirClipsWireless</h4>
+                    <h4 class="font-semibold mt-2">Sony SRS-XB13</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                     <a href="product.html?id=Oneplus_NordBuds2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Earbuds/Oneplus_NordBuds2/image1.webp",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+               <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                   <a href="product.html?id=Amazfit Bip 3 Pro" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Smartwatches/Amazfit Bip 3 Pro/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                        
-                    <h4 class="font-semibold mt-2">Oneplus_NordBuds2</h4>
+                    <h4 class="font-semibold mt-2">Amazfit Bip 3 Pro</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
+
+               
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                     <a href="product.html?id=Samsung_GalaxyBuds2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -343,29 +364,29 @@
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                     <a href="product.html?id=JBL Tune 510BT" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src="../assets/images/Headphones/JBL Tune 510BT/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                    <a href="product.html?id=Sony WI-C100 Wireless Neckband" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=   "../assets/images/Neckbands/Sony WI-C100 Wireless Neckband/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                      
-                    <h4 class="font-semibold mt-2">JBL Tune 510BT</h4>
+                    <h4 class="font-semibold mt-2">Sony WI-C100 Wireless Neckband</h4>
+                    <div class="text-base">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+               
+   <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                    <a href="product.html?id=Mivi Roam 2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Speakers/Mivi Roam 2/image1.jpg",,alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+                    <h4 class="font-semibold mt-2">Mivi Roam 2</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                    <a href="product.html?id=Sony WH-CH520" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Headphones/Sony WH-CH520/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
- /> </a>
-                    <h4 class="font-semibold mt-2">Sony WH-CH520</h4>
-                    <div class="text-base">
-                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
-                    </div>
-                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
-                </div>
+               
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                   <a href="product.html?id=boAt Rockerz 450" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -380,9 +401,17 @@
 
             </div>
         </div>
-
+        </section>
+  <section class="px-6 py-10 space-y-12">
         <div>
-            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+             <h2 class="text-4xl font-bold mb-4">
+  <span class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Fresh finds </span>
+
+</h2>
+
+             <div class="overflow-x-auto px-12 pb-2 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
+      
+      <div class="flex gap-6">
             <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
@@ -406,17 +435,18 @@
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                  <a href="product.html?id=Boult Audio ProBass Curve ANC" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=  "../assets/images/Neckbands/Boult Audio ProBass Curve ANC/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+                    <a href="product.html?id=JBL Go 3" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=   "../assets/images/Speakers/JBL Go 3/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">Boult Audio ProBass Curve ANC</h4>
+                    <h4 class="font-semibold mt-2">JBL Go 3</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
+
+              
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                    <a href="product.html?id=Boat_WaveCall2Plus" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -430,26 +460,28 @@
                 </div>
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                  <a href="product.html?id=realme Buds Wireless 2 Neo" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Neckbands/realme Buds Wireless 2 Neo/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+                   <a href="product.html?id=realme Watch 3 Pro" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=    "../assets/images/Smartwatches/realme Watch 3 Pro/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">Sony WH-CH520</h4>
+                    <h4 class="font-semibold mt-2">realme Watch 3 Pro</h4>
+                    <div class="text-base">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                     <a href="product.html?id=JBL Tune 510BT" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src="../assets/images/Headphones/JBL Tune 510BT/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+                      
+                    <h4 class="font-semibold mt-2">JBL Tune 510BT</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                    <a href="product.html?id=Sony WI-C100 Wireless Neckband" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=   "../assets/images/Neckbands/Sony WI-C100 Wireless Neckband/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
- /> </a>
-                    <h4 class="font-semibold mt-2">Sony WI-C100 Wireless Neckband</h4>
-                    <div class="text-base">
-                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
-                    </div>
-                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
-                </div>
+               
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                     <a href="product.html?id=Wings Phantom 315 Neckband" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -475,32 +507,33 @@
 
             </div>
         </div>
+        </section>
+         <section class="px-6 py-10 space-y-12">
 
         <div>
-            <h2 class="text-2xl font-bold mb-4">Top Picks For You</h2>
+          <h2 class="text-4xl font-bold mb-4">
+  <span class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">See it. Love it. Shop it. </span>
+ 
+</h2>
+
+    <div class="overflow-x-auto px-12 pb-2 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent">
+      
+      <div class="flex gap-6">
             <div class="flex gap-6 overflow-x-auto scrollbar-custom p-2">
-
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                   <a href="product.html?id=Amazfit Bip 3 Pro" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Smartwatches/Amazfit Bip 3 Pro/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                     <a href="product.html?id=Oneplus_NordBuds2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Earbuds/Oneplus_NordBuds2/image1.webp",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">Amazfit Bip 3 Pro</h4>
+                        
+                    <h4 class="font-semibold mt-2">Oneplus_NordBuds2</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
+               
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                  <a href="product.html?id=Fire-Boltt Phoenix Pro" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Smartwatches/Fire-Boltt Phoenix Pro/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
- /> </a>
-                    <h4 class="font-semibold mt-2">Fire-Boltt Phoenix Pro</h4>
-                    <div class="text-base">
-                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
-                    </div>
-                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
-                </div>
+               
 
                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
                    <a href="product.html?id=Noise_ColorFitIcon2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
@@ -512,12 +545,21 @@
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
-
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                   <a href="product.html?id=realme Watch 3 Pro" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=    "../assets/images/Smartwatches/realme Watch 3 Pro/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                  <a href="product.html?id=realme Buds Wireless 2 Neo" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Neckbands/realme Buds Wireless 2 Neo/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">realme Watch 3 Pro</h4>
+                    <h4 class="font-semibold mt-2">Sony WH-CH520</h4>
+                    <div class="text-base">
+                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
+                    </div>
+                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
+                </div>
+                 <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                    <a href="product.html?id=Sony WH-CH520" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src= "../assets/images/Headphones/Sony WH-CH520/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+ /> </a>
+                    <h4 class="font-semibold mt-2">Sony WH-CH520</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
@@ -535,33 +577,24 @@
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                    <a href="product.html?id=JBL Go 3" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=   "../assets/images/Speakers/JBL Go 3/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+                  <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                  <a href="product.html?id=Boult Audio ProBass Curve ANC" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=  "../assets/images/Neckbands/Boult Audio ProBass Curve ANC/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">JBL Go 3</h4>
+                    <h4 class="font-semibold mt-2">Boult Audio ProBass Curve ANC</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>
                     <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
                 </div>
 
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                    <a href="product.html?id=Mivi Roam 2" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src= "../assets/images/Speakers/Mivi Roam 2/image1.jpg",,alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
+             
+              <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
+                   <a href="product.html?id=Noise_AirClipsWirelessAirbuds" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
+    <img src=" ../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg"alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
  /> </a>
-                    <h4 class="font-semibold mt-2">Mivi Roam 2</h4>
-                    <div class="text-base">
-                        <span class="line-through text-gray-300">₹3,999</span> ₹2,526
-                    </div>
-                    <p class="text-sm text-gray-200">OWS with Airwave™ Tech</p>
-                </div>
-
-                <div class="min-w-[280px] p-4 rounded-xl glass hover-zoom">
-                   <a href="product.html?id=Sony SRS-XB13" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-    <img src=  "../assets/images/Speakers/Sony SRS-XB13/image1.jpg",alt="product1"class="w-full aspect-square object-cover rounded-t-lg"
- /> </a>
-                    <h4 class="font-semibold mt-2">Sony SRS-XB13</h4>
+                     
+                    <h4 class="font-semibold mt-2">Noise_AirClipsWireless</h4>
                     <div class="text-base">
                         <span class="line-through text-gray-300">₹3,999</span> ₹2,526
                     </div>

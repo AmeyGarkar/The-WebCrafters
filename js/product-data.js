@@ -38,8 +38,8 @@ window.productsData = {
    
 images: [
   "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg",
-  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image2.webp",
-  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image5.jpgg"
+  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image2.jpg",
+  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image5.jpg"
 ],
 
   
@@ -290,9 +290,8 @@ images: [
    
 images: [
   "../assets/images/Headphones/Zebronics Zeb-Rush/image1.jpg",
-
-  "../assets/images/Headphones/Zebronics Zeb-Rush/image2.jpg",
-  "../assets/images/Headphone/Zebronics Zeb-Rush/image2.jpg"
+"../assets/images/Headphones/Zebronics Zeb-Rush/image2.jpg",
+  "../assets/images/Headphones/Zebronics Zeb-Rush/image3.jpg"
 
 ],
 
