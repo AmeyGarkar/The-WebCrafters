@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessories - Wearify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.16); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 30px rgba(0,0,0,0.4), inset 0 0 0.5px rgba(255,255,255,0.2); border-radius: 1rem; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen">
+  <!-- NAVBAR -->
+  <header class="flex justify-between items-center p-4 bg-white/10 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+    <div class="flex items-center space-x-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-400 drop-shadow-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
+      </svg>
+      <a href="final_index.html"><h1 class="text-4xl font-extrabold font-serif text-yellow-400 drop-shadow-xl tracking-wide">wearify</h1></a>
+    </div>
+    <nav class="space-x-6">
+      <a href="smartwatches.html" class="hover:text-yellow-300">Smartwatches</a>
+      <a href="earbuds.html" class="hover:text-yellow-300">Earbuds</a>
+      <a href="speakers.html" class="hover:text-yellow-300">Speakers</a>
+      <a href="accessories.html" class="hover:text-yellow-300">Accessories</a>
+    </nav>
+    <div class="flex gap-4 text-2xl cursor-pointer">
+      <span title="Search" class="hover:text-cyan-300 transition cursor-pointer">🔍</span>
+      <span title="Profile" class="hover:text-cyan-300 transition cursor-pointer">👤</span>
+      <a href="cart.html" title="Cart" class="hover:text-cyan-300 transition cursor-pointer">🛒</a>
+    </div>
+  </header>
+  <main class="px-6 py-10">
+    <h2 class="text-3xl font-bold mb-8">Accessories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Product Cards (placeholders, update as needed) -->
+      <div class="glass p-4 flex flex-col items-center">
+        <img src="../assets/images/Headphones/boAt Rockerz 450/image1.jpg" alt="Headphone Case" class="w-32 h-32 object-cover rounded mb-2">
+        <h3 class="font-bold text-lg">Headphone Case</h3>
+        <p class="text-sm text-gray-200">Protective, Water Resistant</p>
+        <div class="mt-2 text-yellow-300 font-semibold">₹499</div>
+      </div>
+      <div class="glass p-4 flex flex-col items-center">
+        <img src="../assets/images/Neckbands/Wings Phantom 315 Neckband/image1.jpg" alt="Neckband Pouch" class="w-32 h-32 object-cover rounded mb-2">
+        <h3 class="font-bold text-lg">Neckband Pouch</h3>
+        <p class="text-sm text-gray-200">Soft, Compact, Stylish</p>
+        <div class="mt-2 text-yellow-300 font-semibold">₹299</div>
+      </div>
+      <div class="glass p-4 flex flex-col items-center">
+        <img src="../assets/images/Smartwatches/Amazfit Bip 3 Pro/image1.jpg" alt="Watch Strap" class="w-32 h-32 object-cover rounded mb-2">
+        <h3 class="font-bold text-lg">Watch Strap</h3>
+        <p class="text-sm text-gray-200">Silicone, Adjustable</p>
+        <div class="mt-2 text-yellow-300 font-semibold">₹199</div>
+      </div>
+      <div class="glass p-4 flex flex-col items-center">
+        <img src="../assets/images/Speakers/Mivi Roam 2/image1.jpg" alt="Speaker Cover" class="w-32 h-32 object-cover rounded mb-2">
+        <h3 class="font-bold text-lg">Speaker Cover</h3>
+        <p class="text-sm text-gray-200">Shockproof, Lightweight</p>
+        <div class="mt-2 text-yellow-300 font-semibold">₹249</div>
+      </div>
+      <div class="glass p-4 flex flex-col items-center">
+        <img src="../assets/images/Earbuds/boAt_Airdopes141/image1.webp" alt="Earbud Tips" class="w-32 h-32 object-cover rounded mb-2">
+        <h3 class="font-bold text-lg">Earbud Tips</h3>
+        <p class="text-sm text-gray-200">Memory Foam, 3 Sizes</p>
+        <div class="mt-2 text-yellow-300 font-semibold">₹149</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
