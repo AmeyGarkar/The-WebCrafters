@@ -38,8 +38,8 @@ window.productsData = {
    
 images: [
   "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg",
-  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.webp",
-  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image2.jpgg"
+  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image2.webp",
+  "../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image5.jpgg"
 ],
 
   
