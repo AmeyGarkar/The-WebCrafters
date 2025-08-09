@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wearify - Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Nata Sans', sans-serif;
+    }
+
+    #mainImg:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail-active {
+      outline: 2px solid #facc15; /* gold accent */
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4),
+                  inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+    }
+
+    #productDescription, #productHighlights, #productDetails {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen px-4">
+
+  <!-- NAVBAR -->
+  <header
+    class="flex justify-between items-center p-4 bg-white/12 backdrop-blur-md border-b border-white/20 rounded-b-lg">
+    <div class="flex items-center space-x-4">
+      <!-- Diamond Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-yellow-400 drop-shadow-xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
+      </svg>
+
+      <!-- Clickable Wearify Text -->
+      <a href="final_index.html">
+        <h1 class="text-4xl font-extrabold font-serif text-yellow-400 drop-shadow-xl tracking-wide">
+          wearify
+        </h1>
+      </a>
+    </div>
+
+    <nav class="space-x-6">
+      <a href="#" class="hover:text-yellow-300">Smartwatches</a>
+      <a href="#" class="hover:text-yellow-300">Earbuds</a>
+      <a href="#" class="hover:text-yellow-300">Speakers</a>
+      <a href="#" class="hover:text-yellow-300">Accessories</a>
+    </nav>
+    <div class="space-x-4">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Left: Image Section -->
+    <div class="flex flex-col items-center">
+      <div class="glass p-4 rounded-xl shadow-md w-full max-w-[500px] flex items-center justify-center">
+       <img id="mainImg" class="w-[500px] h-auto object-contain" />
+      </div>
+      <div id="thumbnails" class="flex gap-4 mt-4 flex-wrap justify-center"></div>
+    </div>
+
+    <!-- Right: Product Details -->
+    <div>
+      <h2 id="productName" class="text-3xl font-bold mb-2"></h2>
+      <div class="flex items-center mb-4">
+        <span class="text-yellow-400 text-xl mr-2">★★★★★</span>
+        <span id="productRating" class="text-gray-200 text-sm"></span>
+      </div>
+      <p id="productDescription" class="mb-4"></p>
+      <div id="productOldPrice" class="line-through text-lg mb-1"></div>
+      <div id="productPrice" class="text-2xl font-bold mb-1"></div>
+      <div class="mb-4">Stock left: <span id="productStock" class="font-semibold text-gray-200"></span></div>
+
+      <div class="flex items-center gap-4 mb-6">
+        <label class="font-semibold">Quantity:</label>
+        <input type="number" value="1" min="1" class="w-16 border rounded px-2 py-1 bg-transparent border-white/30 text-white">
+      </div>
+
+      <div class="flex gap-4 mb-6">
+        <button class="bg-black bg-opacity-40 text-white px-6 py-2 rounded hover:bg-yellow-400 hover:text-black transition-colors duration-300">
+          Add to Cart
+        </button>
+        <button class="bg-yellow-400 text-black px-6 py-2 rounded hover:bg-yellow-300 transition-colors duration-300">
+          Buy Now
+        </button>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-2">Highlights</h3>
+      <ul id="productHighlights" class="list-disc pl-5 space-y-1"></ul>
+
+      <div class="mt-10 space-y-4">
+        <h3 class="text-lg font-semibold">Product Information</h3>
+        <div id="productDetails"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="glass bg-gradient-to-r from-[#41295a] via-[#2F0743] to-[#ff6a00] py-6 text-center rounded-t-xl mt-10">
+    <p>&copy; 2025 <span class="font-semibold">Wearify</span>. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/product-data.js"></script>
+  <script src="../js/product.js"></script>
+
+</body>
+</html>
