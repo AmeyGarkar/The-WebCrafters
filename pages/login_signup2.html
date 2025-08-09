@@ -237,25 +237,74 @@
       loginForm.classList.add('hidden');
     });
 
-    function handleFormSubmit(formId, spinnerId, successId, redirectUrl) {
-      const form = document.getElementById(formId);
-      const spinner = document.getElementById(spinnerId);
-      const success = document.getElementById(successId);
-
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        spinner.classList.remove('hidden');
-        success.classList.add('hidden');
-        setTimeout(() => {
-          spinner.classList.add('hidden');
-          success.classList.remove('hidden');
-          setTimeout(() => window.location.href = redirectUrl, 1200);
-        }, 1200);
-      });
+    // Show error message utility
+    function showError(form, message) {
+      let err = form.querySelector('.form-error');
+      if (!err) {
+        err = document.createElement('div');
+        err.className = 'form-error text-red-400 text-center font-semibold mt-2';
+        form.appendChild(err);
+      }
+      err.textContent = message;
+      err.style.display = 'block';
     }
 
-    handleFormSubmit('loginForm', 'loginSpinner', 'loginSuccess', 'final_index.html');
-    handleFormSubmit('signupForm', 'signupSpinner', 'signupSuccess', 'final_index.html');
+    // LOGIN AJAX
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      document.getElementById('loginSpinner').classList.remove('hidden');
+      document.getElementById('loginSuccess').classList.add('hidden');
+      if (loginForm.querySelector('.form-error')) loginForm.querySelector('.form-error').style.display = 'none';
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      try {
+        const res = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        document.getElementById('loginSpinner').classList.add('hidden');
+        if (res.ok) {
+          document.getElementById('loginSuccess').classList.remove('hidden');
+          setTimeout(() => window.location.href = 'final_index.html', 1200);
+        } else {
+          const data = await res.json();
+          showError(loginForm, data.error || 'Login failed.');
+        }
+      } catch (err) {
+        document.getElementById('loginSpinner').classList.add('hidden');
+        showError(loginForm, 'Network error.');
+      }
+    });
+
+    // SIGNUP AJAX
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      document.getElementById('signupSpinner').classList.remove('hidden');
+      document.getElementById('signupSuccess').classList.add('hidden');
+      if (signupForm.querySelector('.form-error')) signupForm.querySelector('.form-error').style.display = 'none';
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      try {
+        const res = await fetch('/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+        document.getElementById('signupSpinner').classList.add('hidden');
+        if (res.ok) {
+          document.getElementById('signupSuccess').classList.remove('hidden');
+          setTimeout(() => window.location.href = 'final_index.html', 1200);
+        } else {
+          const data = await res.json();
+          showError(signupForm, data.error || 'Signup failed.');
+        }
+      } catch (err) {
+        document.getElementById('signupSpinner').classList.add('hidden');
+        showError(signupForm, 'Network error.');
+      }
+    });
   </script>
 
 </body>
