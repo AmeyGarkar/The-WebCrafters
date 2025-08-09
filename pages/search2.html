@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search - Wearify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+    }
+
+    .hover-zoom {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-zoom:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-btn {
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.2), rgba(251, 146, 60, 0.2));
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .category-btn:hover {
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.4), rgba(251, 146, 60, 0.4));
+      transform: translateY(-2px);
+    }
+
+    .search-input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #facc15;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-[#41295a] via-[#2F0743] to-[#ff6a00] text-white min-h-screen">
+
+  <!-- Search Header -->
+  <nav class="w-full p-6 border-b border-white/20">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l3 4-9 13L3 7l3-4z" />
+          </svg>
+          <h1 class="text-2xl font-extrabold font-serif text-yellow-400 tracking-wide">wearify</h1>
+        </div>
+        <span class="text-white/60">|</span>
+        <h2 class="text-xl font-semibold">Search</h2>
+      </div>
+      
+      <div class="relative">
+        <input
+          id="searchBox"
+          type="text"
+          placeholder="Search for smartwatches, earbuds, speakers..."
+          class="search-input w-full px-6 py-4 pl-14 rounded-2xl text-white placeholder-white/60 focus:outline-none text-lg"
+        />
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex min-h-[calc(100vh-140px)]">
+    <!-- Categories Sidebar -->
+    <aside class="w-1/4 p-8 space-y-4">
+      <h2 class="text-xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+        Browse Categories
+      </h2>
+      
+      <div class="space-y-3">
+        <button class="category-btn w-full py-4 px-6 rounded-xl text-left font-semibold flex items-center gap-4 group" onclick="filterByCategory('smartwatches')">
+          <span class="text-2xl">⌚</span>
+          <div>
+            <p class="text-white group-hover:text-yellow-300 transition">Smartwatches</p>
+            <p class="text-sm text-white/60">Track your health & style</p>
+          </div>
+        </button>
+
+        <button class="category-btn w-full py-4 px-6 rounded-xl text-left font-semibold flex items-center gap-4 group" onclick="filterByCategory('earbuds')">
+          <span class="text-2xl">🎧</span>
+          <div>
+            <p class="text-white group-hover:text-yellow-300 transition">Earbuds</p>
+            <p class="text-sm text-white/60">Wireless freedom</p>
+          </div>
+        </button>
+
+        <button class="category-btn w-full py-4 px-6 rounded-xl text-left font-semibold flex items-center gap-4 group" onclick="filterByCategory('speakers')">
+          <span class="text-2xl">🔊</span>
+          <div>
+            <p class="text-white group-hover:text-yellow-300 transition">Speakers</p>
+            <p class="text-sm text-white/60">Room-filling sound</p>
+          </div>
+        </button>
+
+        <button class="category-btn w-full py-4 px-6 rounded-xl text-left font-semibold flex items-center gap-4 group" onclick="filterByCategory('headphones')">
+          <span class="text-2xl">🎵</span>
+          <div>
+            <p class="text-white group-hover:text-yellow-300 transition">Headphones</p>
+            <p class="text-sm text-white/60">Immersive audio</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Quick Filters -->
+      <div class="mt-8 pt-6 border-t border-white/20">
+        <h3 class="font-semibold mb-4 text-yellow-400">Quick Filters</h3>
+        <div class="space-y-2">
+          <button onclick="filterByPrice('under2000')" class="w-full text-left py-2 px-4 rounded-lg hover:bg-white/10 transition text-sm">
+            Under ₹2,000
+          </button>
+          <button onclick="filterByPrice('2000to5000')" class="w-full text-left py-2 px-4 rounded-lg hover:bg-white/10 transition text-sm">
+            ₹2,000 - ₹5,000
+          </button>
+          <button onclick="filterByPrice('above5000')" class="w-full text-left py-2 px-4 rounded-lg hover:bg-white/10 transition text-sm">
+            Above ₹5,000
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Results -->
+    <main class="flex-1 p-8">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold mb-2">
+          <span id="resultsTitle" class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            Trending Products
+          </span>
+        </h2>
+        <p class="text-white/70" id="resultsCount">Showing all products</p>
+      </div>
+
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Products will be loaded here -->
+      </div>
+
+      <!-- No Results -->
+      <div id="noResults" class="hidden text-center py-16">
+        <div class="text-6xl mb-4">🔍</div>
+        <h3 class="text-xl font-semibold mb-2">No products found</h3>
+        <p class="text-white/70">Try adjusting your search or browse our categories</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const searchProducts = [
+      { id: 'boAt_Airdopes141', name: 'boAt Airdopes 141', category: 'Earbuds', price: 999, oldPrice: 2990, image: '../assets/images/Earbuds/boAt_Airdopes141/image1.webp', description: '42 hours playtime with ENx noise cancellation' },
+      { id: 'Noise_AirClipsWirelessAirbuds', name: 'Noise AirClips', category: 'Earbuds', price: 1599, oldPrice: 3499, image: '../assets/images/Earbuds/Noise_AirClipsWirelessAirbuds/image1.jpg', description: 'Compact earbuds with 50 hours playtime' },
+      { id: 'Samsung_GalaxyBuds2', name: 'Samsung Galaxy Buds2', category: 'Earbuds', price: 8999, oldPrice: 11999, image: '../assets/images/Earbuds/Samsung_GalaxyBuds2/image1.jpg', description: 'Premium ANC earbuds with immersive sound' },
+      { id: 'boAt Rockerz 450', name: 'boAt Rockerz 450', category: 'Headphones', price: 1499, oldPrice: 3990, image: '../assets/images/Headphones/boAt Rockerz 450/image1.jpg', description: '40mm drivers, 15 hours playback' },
+      { id: 'JBL Tune 510BT', name: 'JBL Tune 510BT', category: 'Headphones', price: 3299, oldPrice: 4999, image: '../assets/images/Headphones/JBL Tune 510BT/image1.jpg', description: 'JBL Pure Bass Sound, 40 hours battery' },
+      { id: 'Sony WH-CH520', name: 'Sony WH-CH520', category: 'Headphones', price: 4499, oldPrice: 5990, image: '../assets/images/Headphones/Sony WH-CH520/image1.jpg', description: 'Comfortable wireless with 50 hours battery' },
+      { id: 'Amazfit Bip 3 Pro', name: 'Amazfit Bip 3 Pro', category: 'Smartwatches', price: 2999, oldPrice: 4999, image: '../assets/images/Smartwatches/Amazfit Bip 3 Pro/image1.jpg', description: 'AMOLED display with built-in GPS' },
+      { id: 'Fire-Boltt Phoenix Pro', name: 'Fire-Boltt Phoenix Pro', category: 'Smartwatches', price: 1599, oldPrice: 4999, image: '../assets/images/Smartwatches/Fire-Boltt Phoenix Pro/image1.jpg', description: 'Bluetooth calling with rotating crown' },
+      { id: 'boAt Stone 1200F', name: 'boAt Stone 1200F', category: 'Speakers', price: 2999, oldPrice: 5990, image: '../assets/images/Speakers/boAt Stone 1200F/image1.jpg', description: '14W RMS stereo sound with RGB LEDs' },
+      { id: 'JBL Go 3', name: 'JBL Go 3', category: 'Speakers', price: 3499, oldPrice: 3999, image: '../assets/images/Speakers/JBL Go 3/image1.jpg', description: 'Bold JBL Pro Sound, IP67 waterproof' }
+    ];
+
+    let currentResults = [...searchProducts];
+
+    function renderProducts(products) {
+      const grid = document.getElementById('productGrid');
+      const noResults = document.getElementById('noResults');
+      
+      if (products.length === 0) {
+        grid.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      grid.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      
+      grid.innerHTML = products.map(product => {
+        const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+        
+        return `
+          <div class="glass rounded-xl p-4 hover-zoom cursor-pointer" onclick="goToProduct('${product.id}')">
+            <div class="relative mb-4">
+              <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover rounded-lg" />
+              <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                ${discount}% OFF
+              </span>
+            </div>
+            <h3 class="font-bold text-lg mb-2 text-white">${product.name}</h3>
+            <p class="text-sm text-white/70 mb-3">${product.description}</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xl font-bold text-yellow-400">₹${product.price.toLocaleString()}</span>
+                <span class="text-sm line-through text-white/50 ml-2">₹${product.oldPrice.toLocaleString()}</span>
+              </div>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">${product.category}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterByCategory(category) {
+      const categoryMap = {
+        'smartwatches': 'Smartwatches',
+        'earbuds': 'Earbuds', 
+        'speakers': 'Speakers',
+        'headphones': 'Headphones'
+      };
+      
+      const filterCategory = categoryMap[category];
+      currentResults = searchProducts.filter(p => p.category === filterCategory);
+      
+      document.getElementById('resultsTitle').textContent = filterCategory;
+      document.getElementById('resultsCount').textContent = `Showing ${currentResults.length} ${category}`;
+      
+      renderProducts(currentResults);
+    }
+
+    function filterByPrice(range) {
+      let filtered = [];
+      
+      if (range === 'under2000') {
+        filtered = searchProducts.filter(p => p.price < 2000);
+      } else if (range === '2000to5000') {
+        filtered = searchProducts.filter(p => p.price >= 2000 && p.price <= 5000);
+      } else if (range === 'above5000') {
+        filtered = searchProducts.filter(p => p.price > 5000);
+      }
+      
+      currentResults = filtered;
+      document.getElementById('resultsTitle').textContent = `Products ${range.replace('under', 'under ₹').replace('to', ' - ₹').replace('above', 'above ₹')}`;
+      document.getElementById('resultsCount').textContent = `Showing ${filtered.length} products`;
+      
+      renderProducts(filtered);
+    }
+
+    function searchProducts(query) {
+      if (!query.trim()) {
+        currentResults = [...searchProducts];
+        document.getElementById('resultsTitle').textContent = 'All Products';
+        document.getElementById('resultsCount').textContent = `Showing ${searchProducts.length} products`;
+      } else {
+        currentResults = searchProducts.filter(p => 
+          p.name.toLowerCase().includes(query.toLowerCase()) ||
+          p.category.toLowerCase().includes(query.toLowerCase()) ||
+          p.description.toLowerCase().includes(query.toLowerCase())
+        );
+        document.getElementById('resultsTitle').textContent = `Search Results for "${query}"`;
+        document.getElementById('resultsCount').textContent = `Found ${currentResults.length} products`;
+      }
+      
+      renderProducts(currentResults);
+    }
+
+    function goToProduct(productId) {
+      window.parent.location.href = `product.html?id=${productId}`;
+    }
+
+    // Event listeners
+    document.getElementById('searchBox').addEventListener('input', (e) => {
+      searchProducts(e.target.value);
+    });
+
+    document.getElementById('searchBox').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        searchProducts(e.target.value);
+      }
+    });
+
+    // Initialize
+    window.onload = () => {
+      renderProducts(searchProducts);
+    };
+  </script>
+
+</body>
+</html>
